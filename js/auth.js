@@ -1,4 +1,4 @@
-/* One authentication flow for the library, story editor and scoreboards. */
+/* Authentication for the Utsukushi Yama library and story editor. */
 window.KyokushinLoginSystem = (() => {
   'use strict';
   const levelHierarchy = {};
@@ -20,7 +20,7 @@ window.KyokushinLoginSystem = (() => {
     document.dispatchEvent(new CustomEvent('auth:changed',{detail:currentUser}));
   }
   function setUser(raw) {
-    currentUser=raw ? { ...raw,level:raw.nivel_acesso,displayName:raw.nome_display,validDate:raw.data_expiracao, permissions:['kumite','kata'], logo:'img/about.png', role:raw.nivel_acesso==='admin'?'admin':'operator' } : null;
+    currentUser=raw ? { ...raw,level:raw.nivel_acesso,displayName:raw.nome_display,validDate:raw.data_expiracao } : null;
     updateUI(); return currentUser;
   }
   async function login(username,password) { const data=await request('login',{username,password});return setUser(data.user); }
@@ -47,15 +47,6 @@ window.KyokushinLoginSystem = (() => {
     button?.addEventListener('click',submit);
     document.getElementById('loginPassword')?.addEventListener('keydown',event=>{if(event.key==='Enter')submit(event);});
     document.getElementById('logoutBtn')?.addEventListener('click',logout);
-    const form=document.getElementById('loginForm');
-    form?.addEventListener('submit',async event=>{
-      event.preventDefault();const button=document.getElementById('loginButton');const error=document.getElementById('loginError');button.disabled=true;error.hidden=true;
-      try {
-        const user=await login(document.getElementById('loginUsername').value.trim(),document.getElementById('panelPassword').value);
-        if(!(levelHierarchy[user.level]||[]).includes('painelplacar'))throw new Error('Esta conta não tem acesso ao placar.');
-        location.href='PainelKumite.html';
-      } catch(e){error.textContent=e.message;error.hidden=false;}finally{button.disabled=false;}
-    });
     setInterval(async()=>{
       if(!currentUser)return;
       try {const user=(await request('check-session')).user;setUser(user);if(!user && document.body.dataset.requiredLevel)location.href='index.html?modal=expired';}catch{}

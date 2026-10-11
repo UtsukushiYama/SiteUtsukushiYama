@@ -1,5 +1,6 @@
 node_modules/
 config/local.php
+painel-placar/config/local.php
 .env
 .env.*
 !.env.example

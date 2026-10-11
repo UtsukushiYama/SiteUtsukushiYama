@@ -10,7 +10,9 @@
 - Corrigida a inicialização de submenus após a inserção do cabeçalho e o menu que ficava forçado como aberto no celular. Área de login agora fica disponível também em telas pequenas.
 - Corrigidas dependências de tooltips e EmailJS. O formulário genérico de agendamento deixa de afirmar que enviou uma mensagem quando não há serviço de envio conectado.
 - Removidos o login com senhas expostas no JavaScript, o gerador de hashes público e usuários de exemplo com hashes inválidos no SQL.
-- Unificado login de placar e biblioteca na API PHP, com consultas preparadas, verificação de validade/conta ativa, erros genéricos para falha de login, limite de tentativas, cookie HttpOnly/SameSite e validação de origem nos pedidos de escrita.
+- Login da biblioteca e login do placar usam APIs independentes, ambos com consultas preparadas, verificação de validade/conta ativa, erros genéricos para falha de login, limite de tentativas, cookie HttpOnly/SameSite e validação de origem nos pedidos de escrita.
+- Separado o Placar Kyokushin em um produto completo em `painel-placar/`, com pacote próprio, tabelas `placar_*`, cookie `pp_session`, bibliotecas e configuração próprias. O site mantém apenas um link para o produto; contas e permissões não são compartilhadas.
+- Corrigida a seção de notícias da home: ela buscava `blog.html`, agora protegido por login, e recebia um redirecionamento sem cards. Resumos públicos foram centralizados em `data/blog-cards.html`; home e blog usam essa mesma fonte. A home seleciona os três primeiros automaticamente. Também foram corrigidos os alvos e a inicialização dos carrosséis após a alteração dos IDs.
 - Protegida a entrega das páginas restritas no servidor. Falsificar `localStorage` não libera conteúdo. Regras do menu e da página usam o mesmo manifesto; arquivos privados, SQL, ferramentas e pastas de trabalho são bloqueados por `.htaccess` e pelo roteador local.
 - Stories têm leitor acessível, navegação, pausa, fechamento, arquivo de leitura, editor de administrador e geração do ZIP para Instagram. O desenho exibido e o exportado é o mesmo.
 - Conteúdo salvo pelo editor usa bloqueio e troca atômica de arquivo, reduzindo o risco de gravações parciais. Texto é renderizado como texto, sem executar HTML inserido no editor.
@@ -18,8 +20,8 @@
 ## Decisões e limites
 
 - A identidade do site é única; cores de faixas, Shiro/Aka e layouts de competição continuam refletindo sua finalidade. Documentos técnicos mantêm a própria paginação dentro da identidade compartilhada.
-- Os modos de competição Kata/Kumite não abrem stories no meio da operação. As demais páginas exibem a publicação a cada carregamento completo.
-- Contas de placar agora usam o banco da biblioteca. As listas de usuários/senhas embutidas foram removidas, sem criar automaticamente contas antigas ou copiar suas senhas. Novas contas com nível `painelplacar` ou superior têm acesso aos dois modos.
+- O módulo independente do placar não carrega os stories. O site abre o leitor automaticamente uma vez por dia por navegador, usando a data de Brasília. A preferência fica em `localStorage`, com cookie como alternativa; limpar os dados do navegador ou usar outro navegador permite uma nova apresentação. Leitura pelo menu e por links diretos continua disponível a qualquer momento.
+- Contas de placar agora usam `placar_usuarios`, com modos contratados definidos em `permite_kata` e `permite_kumite`. As listas de usuários/senhas embutidas foram removidas, sem criar automaticamente contas antigas ou copiar suas senhas. Uma conta da biblioteca, inclusive administradora, não libera o placar. As linhas já existentes do banco não são apagadas; cadastre as contas comerciais separadamente.
 - O antigo limite de telas estava em `localStorage` e funcionava apenas no mesmo navegador. Ele não oferecia controle de dispositivos. Não está sendo apresentado como proteção na nova versão; licenciamento por dispositivo exige uma implementação própria no servidor. Nenhuma restrição contratual por dispositivo pode depender daquele mecanismo antigo.
 - Sessões têm validade fixa de 24 horas; não são renovadas indefinidamente por heartbeat. Sessões anteriores do login de navegador não são migradas: usuários entram novamente.
 - A geração de Instagram é local no navegador e dispensa contas Meta. Não existe publicação direta no Instagram nesta versão.

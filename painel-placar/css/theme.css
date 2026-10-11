@@ -1,0 +1,20 @@
+:root{--pp-accent:#667eea;--pp-ink:#161b2b;--pp-font:system-ui,-apple-system,'Segoe UI',sans-serif;}
+body.pp-app{font-family:var(--pp-font);margin:0;}
+body[data-workspace]{line-height:normal;}
+body[data-workspace] :is(input,button){font-family:var(--pp-font);}
+:focus-visible{outline:3px solid var(--pp-accent);outline-offset:4px;}
+.pp-notice{position:fixed;top:1rem;right:1rem;z-index:12000;max-width:calc(100vw - 2rem);padding:1rem;border-radius:.7rem;background:var(--pp-ink);color:#fff;box-shadow:0 10px 30px #0003;}
+body[data-page=painelplacar]{background:linear-gradient(135deg,#111827,#26324d);min-height:100svh;}
+.pp-login{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;padding:2rem 1rem;}
+.pp-brand{display:flex;align-items:center;gap:.8rem;color:#fff;font-weight:800;text-decoration:none;letter-spacing:.1em;}
+.pp-brand img{width:52px;height:52px;}
+.pp-login-card{width:min(100%,420px);padding:2rem;background:#fff;border-radius:1rem;box-shadow:0 20px 60px #0003;}
+.pp-login-card h1{font-size:1.6rem;margin-bottom:1rem;}
+.pp-login-card p{color:#555;line-height:1.5;}
+#loginForm{display:flex;flex-direction:column;gap:.7rem;margin:1.5rem 0;}
+#loginForm input{border:1px solid #bbb;border-radius:.5rem;padding:.75rem;width:100%;}
+#loginButton{border:0;border-radius:.5rem;background:#485cc8;color:#fff;font-weight:700;padding:.9rem;}
+#loginButton:disabled{opacity:.65;}
+#loginError{color:#a71525;background:#fff0f0;padding:.7rem;border-radius:.4rem;}
+[hidden]{display:none!important;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}}

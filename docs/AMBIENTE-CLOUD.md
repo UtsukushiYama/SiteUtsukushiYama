@@ -19,7 +19,9 @@ export PATH=/workspace/runtime/bin:$PATH
 
 O script reutiliza binários verificados, instala dependências com `npm ci`, mantém dados existentes e inicia apenas serviços locais. Não usa a hospedagem de produção nem credenciais reais. PHP e MariaDB ficam em `/workspace/runtime`, sem instalar pacotes no sistema. As fontes APT usam os repositórios Debian oficiais e verificações de assinatura e checksum.
 
-O banco de desenvolvimento usa a porta 3307, o servidor PHP a porta 8080. Uma cópia publicada do filesystem preserva arquivos e dependências, mas processos precisam ser reiniciados. As credenciais locais geradas ficam em `config/local.php`, ignorado pelo Git. Esse arquivo é para o banco local isolado e não deve ser enviado ao InfinityFree.
+O banco de desenvolvimento usa a porta 3307, o servidor PHP a porta 8080. O script também cria as tabelas independentes `placar_*` e o arquivo privado `painel-placar/config/local.php`, sem sobrescrever configurações existentes. O site e o produto compartilham somente o banco local físico; suas contas e sessões são separadas. Uma cópia publicada do filesystem preserva arquivos e dependências, mas processos precisam ser reiniciados. Os dois arquivos privados de configuração são ignorados pelo Git e usam somente o banco local isolado; não devem ser enviados ao InfinityFree.
+
+Os testes iniciam o site na porta 8081 e uma instalação que serve somente o módulo do placar na porta 8082, confirmando que ele funciona sem a biblioteca. Para abrir só o módulo durante o desenvolvimento, use `npm run dev:placar` quando a porta 8082 estiver livre.
 
 Para testar:
 

@@ -6,13 +6,7 @@
 4. Preserve as pastas de mídias que já estão na hospedagem, `config/local.php` e `storage/stories.json`. O pacote não traz suas credenciais nem o conteúdo salvo pelo editor. Não envie `.git`, `node_modules`, `tools`, `tests`, ZIPs originais ou arquivos SQL para a área pública.
 5. No painel do InfinityFree, abra **MySQL Databases** e crie/selecione seu banco MySQL. O SQL não está dentro do ZIP do site: baixe separadamente [uy_database.sql](https://github.com/UtsukushiYama/SiteUtsukushiYama/blob/pacote-download/uy_database.sql), usando o botão **Download raw file** no GitHub. Abra o phpMyAdmin pelo painel, clique no nome completo do banco na coluna esquerda e use **Importar** para enviar esse arquivo. O script não tenta criar um banco, pois esse procedimento é feito pelo painel da hospedagem. Se já usa as tabelas `usuarios`, `sessoes` e `access_log`, preserve os dados e faça backup; `CREATE TABLE IF NOT EXISTS` não sobrescreve essas tabelas.
 6. Copie `config/local.example.php` para `config/local.php`. Preencha o bloco `development` com os dados do banco local e o bloco `production` com host, porta, nome completo do banco (incluindo o prefixo da conta), usuário e senha fornecidos pelo InfinityFree. O arquivo identifica automaticamente o ambiente; você pode usar o mesmo arquivo preenchido no localhost e na hospedagem. Não use apenas `uy_db` em produção se o painel mostrar um nome com prefixo. Nunca envie esse arquivo ao GitHub. Se já tem `local.php`, copie seus dados para o bloco correspondente do novo modelo sem perder as credenciais. Consulte [o guia dos dois ambientes](CONFIGURACAO.md).
-7. Para um banco antigo, se precisar do nível exclusivo de placar, execute no phpMyAdmin:
-
-```sql
-ALTER TABLE usuarios MODIFY nivel_acesso
-  ENUM('guest','painelplacar','iniciante','intermediario','avancado','admin')
-  NOT NULL DEFAULT 'iniciante';
-```
+7. Para instalar o placar comercial, use o ZIP e o SQL próprios descritos em [painel-placar/README.md](../painel-placar/README.md). Não adicione um nível de placar às contas da biblioteca. As contas do produto ficam em `placar_usuarios`; os dados antigos do banco não são apagados automaticamente.
 
 8. Crie uma conta administradora com **senha nova**. No seu computador com PHP, execute `php tools/password-hash.php`. Copie o hash gerado para a coluna `password_hash` ao inserir/editar sua conta pelo phpMyAdmin. Preencha `username`, `nome_display`, `nivel_acesso = admin`, `ativo = 1`; deixe `data_expiracao` nula se não houver vencimento. Nunca use geradores de senha públicos para contas reais.
 9. Confirme que `storage` existe e permite gravação pelo PHP. Na hospedagem, em geral a permissão de pasta 755 funciona; use a permissão recomendada pelo provedor. Evite liberar 777 indiscriminadamente.

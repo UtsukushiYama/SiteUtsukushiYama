@@ -1,0 +1,8 @@
+DirectoryIndex PainelLanding.html
+RewriteEngine On
+RewriteRule ^(?:config|storage|tools|tests|docs|node_modules)(?:/|$) - [F,L,NC]
+RewriteRule (^|/)\. - [F,L]
+RewriteRule ^(?:placar_database\.sql|README\.md)$ - [F,L,NC]
+RewriteRule ^api/config\.php$ - [F,L,NC]
+RewriteRule ^$ page.php?page=PainelLanding.html [L]
+RewriteRule ^([A-Za-z0-9_-]+\.html)$ page.php?page=$1 [L,QSA]

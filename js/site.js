@@ -46,7 +46,7 @@
     document.querySelectorAll('[data-current-year]').forEach(e => e.textContent = new Date().getFullYear());
     const page = decodeURIComponent(location.pathname.split('/').pop()) || 'index.html';
     document.querySelectorAll('#header a[href]').forEach(a => { if (a.getAttribute('href') === page) a.setAttribute('aria-current', 'page'); });
-    if (!document.body.dataset.workspace) {
+    {
       const skip = document.createElement('a'); skip.href='#uy-content'; skip.className='uy-skip'; skip.textContent='Ir para o conteúdo';document.body.prepend(skip);
       const content = document.querySelector('main, #header + section, #header + div'); if(content && content.id !== 'footer')content.id ||= 'uy-content';
     }
@@ -67,17 +67,18 @@
     const response = await fetch('js/pages.json'); if (!response.ok) throw new Error('Manifesto de páginas indisponível.');
     const pages = await response.json();
     const scripts = pages[page]?.scripts || [];
-    if (document.body.dataset.workspace) await loadScript('js/scoreboard.js');
     if (['reijisaho.html','tameshiware.html','dojokunpage.html','graduacaoheikokai.html','graduacaowkb.html'].includes(page)) {
       await loadScript('assets/vendor/popper.min.js'); await loadScript('assets/vendor/tippy.min.js');
     }
     if(page==='contact.html')await loadScript('assets/vendor/emailjs.min.js');
     for (const src of scripts) await loadScript(src);
+    await window.UY.initBlogFeed?.();
+    window.MenuAccessControl.addLockIcons();
     document.dispatchEvent(new Event('site:ready'));
-    window.UY.ready = true;
-    if (!document.body.dataset.workspace) {
+    {
       await loadScript('js/story-artwork.js'); await loadScript('js/stories.js'); await window.UYStories.init();
     }
+    window.UY.ready = true;
   }
   start().catch(error => { console.error(error); window.UY.notify('Não foi possível iniciar o site. Recarregue a página.'); });
 })();

@@ -12,6 +12,8 @@ Você pode guardar as mídias no mesmo repositório. Não renomeie nem reorganiz
 
 Isso envia os arquivos de mídia, não o ZIP. Não copie configurações com senhas, backups de banco nem a pasta `node_modules`.
 
+As mídias exclusivas do produto Placar Kyokushin ficam em `painel-placar/img/` e `painel-placar/audio/`. Por exemplo, copie `img/PainelPlacar/DemoKumite.mp4` da versão antiga para `painel-placar/img/PainelPlacar/DemoKumite.mp4` no repositório, e publique em `htdocs/painel-placar/img/PainelPlacar/DemoKumite.mp4`. Imagens da biblioteca continuam em `img/`. O placar distribuído separadamente precisa receber suas próprias mídias.
+
 Para poucos arquivos, você também pode abrir a pasta no site do GitHub e usar **Add file → Upload files**. O envio pelo navegador tem limite de aproximadamente 25 MB por arquivo; o Git comum bloqueia arquivos com mais de 100 MiB. O Desktop é mais confortável para muitas subpastas.
 
 Para vídeos ou áudios muito grandes, prefira um serviço de mídia apropriado ou avalie Git LFS antes de enviar. Git LFS tem limites e custos próprios; não foi ativado automaticamente. Imagens otimizadas e áudios moderados podem ficar no Git normal.

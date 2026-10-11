@@ -4,16 +4,16 @@
 
 
         function loadSharedData() {
-            const eventTitle = localStorage.getItem('event_title');
-            const eventSubtitle = localStorage.getItem('event_subtitle');
+            const eventTitle = window.PP.store.get('event_title');
+            const eventSubtitle = window.PP.store.get('event_subtitle');
 
             if (eventTitle) document.getElementById('kataEventTitle').value = eventTitle;
             if (eventSubtitle) document.getElementById('kataEventSubtitle').value = eventSubtitle;
         }
 
         function saveSharedData() {
-            localStorage.setItem('event_title', document.getElementById('kataEventTitle').value);
-            localStorage.setItem('event_subtitle', document.getElementById('kataEventSubtitle').value);
+            window.PP.store.set('event_title', document.getElementById('kataEventTitle').value);
+            window.PP.store.set('event_subtitle', document.getElementById('kataEventSubtitle').value);
         }
 
 
@@ -90,7 +90,7 @@
             adjustFinalScoreSize();
         }
 
-        document.addEventListener('site:ready', function () {
+        document.addEventListener('placar:ready', function () {
             const sessionData = checkAuth();
             if (!sessionData) return;
 
@@ -136,10 +136,6 @@
                     class: 'action-mode',
                     tooltip: 'Mudar para Kumite',
                     action: () => {
-                        // Marcar navegação interna antes de trocar
-                        if (window.SessionManager) {
-                            window.SessionManager.markNavigating();
-                        }
                         window.location.href = 'PainelKumite.html';
                     }
                 });

@@ -18,9 +18,13 @@ if ! "$runtime_dir/root/usr/bin/mariadb" --no-defaults --socket="$runtime_dir/my
   done
 fi
 "$runtime_dir/root/usr/bin/mariadb" --no-defaults --socket="$runtime_dir/mysql.sock" -uroot -e 'CREATE DATABASE IF NOT EXISTS uy_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; CREATE DATABASE IF NOT EXISTS uy_test_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;'
-for database in uy_db uy_test_db; do "$runtime_dir/root/usr/bin/mariadb" --no-defaults --socket="$runtime_dir/mysql.sock" -uroot "$database" < uy_database.sql; done
+for database in uy_db uy_test_db; do
+  "$runtime_dir/root/usr/bin/mariadb" --no-defaults --socket="$runtime_dir/mysql.sock" -uroot "$database" < uy_database.sql
+  "$runtime_dir/root/usr/bin/mariadb" --no-defaults --socket="$runtime_dir/mysql.sock" -uroot "$database" < painel-placar/placar_database.sql
+done
 # Create isolated local credentials only when a user has not already configured them.
 if ! test -f config/local.php; then php tools/cloud-database.php; fi
+if ! test -f painel-placar/config/local.php; then php tools/cloud-panel.php; fi
 mkdir -p storage
 if ! curl --silent --fail http://127.0.0.1:8080/api/check-session.php >/dev/null; then
   nohup php -S 127.0.0.1:8080 tools/dev-router.php > "$runtime_dir/site.log" 2>&1 &

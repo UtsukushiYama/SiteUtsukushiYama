@@ -2,6 +2,19 @@ window.UYStories = (() => {
   'use strict';
   let stories=[],reader,index=0,selected,paused=false,timer,last=0,elapsed=0,art=[],initialized=false,previousFocus;
   const duration=15000;
+  const folder=location.pathname.slice(0,location.pathname.lastIndexOf('/'));
+  const dailyKey=`uy:story-auto-day:${folder||'/'}`;
+  function dayInBrasilia(){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());}
+  function automaticallySeenToday(){
+    const today=dayInBrasilia();
+    try{if(localStorage.getItem(dailyKey)===today)return true;}catch{}
+    return document.cookie.split('; ').some(value=>value===`uy_story_day=${today}`);
+  }
+  function rememberAutomaticDay(){
+    const day=dayInBrasilia();try{localStorage.setItem(dailyKey,day);}catch{}
+    // The cookie retains the cosmetic preference when localStorage is unavailable.
+    document.cookie=`uy_story_day=${day}; Path=${encodeURI(folder||'')}/; Max-Age=93600; SameSite=Lax${location.protocol==='https:'?'; Secure':''}`;
+  }
   function element(tag,className,text){const e=document.createElement(tag);if(className)e.className=className;if(text!==undefined)e.textContent=text;return e;}
   function button(text,action,className='btn btn-outline-secondary'){const e=element('button',className,text);e.type='button';e.addEventListener('click',action);return e;}
   function artwork(story,i){return window.StoryArtwork.render(story,story.slides[i],i);}
@@ -108,9 +121,13 @@ window.UYStories = (() => {
       const data=await window.KyokushinLoginSystem.request('stories');stories=data.stories;
       if(!Array.isArray(stories))throw new Error('Conteúdo inválido.');renderLibrary();initializeEditor();
       if(!stories.length)return;
-      // Every full page access opens the story; scoreboards intentionally keep the match unobstructed.
-      const hash=decodeURIComponent(location.hash.slice(1));const chosen=stories.find(s=>s.id===hash)||stories[0];
-      const show=()=>open(chosen);const existing=document.querySelector('dialog[open]');if(existing)existing.addEventListener('close',show,{once:true});else show();
+      const hash=decodeURIComponent(location.hash.slice(1));const requested=stories.find(s=>s.id===hash);const chosen=requested||stories[0];
+      // An explicit story link remains available after today's automatic presentation.
+      const show=()=>{
+        if(!requested&&automaticallySeenToday())return;
+        open(chosen);rememberAutomaticDay();
+      };
+      const existing=document.querySelector('dialog[open]');if(existing)existing.addEventListener('close',show,{once:true});else show();
     }catch(error){window.UY.notify('Não foi possível carregar os stories.');const target=document.getElementById('story-library');if(target)target.textContent='Publicações indisponíveis. Tente novamente.';console.error(error);}
   }
   return {init,open,exportStory,getStories:()=>stories};

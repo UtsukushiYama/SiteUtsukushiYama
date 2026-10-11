@@ -1,10 +1,5 @@
 /audio/Kyokushin-Karate-Dojo-Kun.mp3
 audio/quebarmento-fzk-2019_TDxKFjbi.mp4
-img/Blog/2023_09.jpg
-img/Blog/2024_02.jpg
-img/Blog/2024_07_d.jpeg
-img/Blog/2025_02_a.jpg
-img/Blog/2025_05_b.png
 img/CapaFisico.mp4
 img/CapaFisico.png
 img/CapaNiShuto.png
@@ -153,7 +148,6 @@ img/Galeria/Exames/2024_07_c (6).jpeg
 img/Galeria/Exames/2024_07_c (7).jpeg
 img/Galeria/Exames/2024_07_c (8).jpeg
 img/Galeria/Exames/2024_07_c (9).jpeg
-img/Galeria/Exames/2025 07 a/IMG_9786.jpg
 img/Galeria/Exames/2025_05 (1).jpeg
 img/Galeria/Exames/2025_05 (10).jpeg
 img/Galeria/Exames/2025_05 (11).jpeg
@@ -368,8 +362,6 @@ img/Kata/kata-yantsu.png
 img/KeinoTatsujin.ico
 img/OyamaKata.jpg
 img/OyamaeKimura.jpg
-img/PainelPlacar/DemoKata.mp4
-img/PainelPlacar/DemoKumite.mp4
 img/Simbolos.png
 img/Touro.png
 img/about-1.jpg
@@ -401,7 +393,6 @@ img/kobudo/kobudokata.png
 img/kobudo/kobudopratica.png
 img/kobudo/shinkentaira.png
 img/kumite1.jpg
-img/logo-default.png
 img/oqueekyokushin1.png
 img/oqueekyokushin2.png
 img/oqueekyokushin3.jpg
@@ -462,3 +453,5 @@ img/tooltipimage/nakamura.jpeg
 img/tooltipimage/shigeruoyama.jpeg
 img/tooltipimage/shokeimatsui.jpeg
 img/utsukushiyama-intro.jpg
+painel-placar/img/PainelPlacar/DemoKata.mp4
+painel-placar/img/PainelPlacar/DemoKumite.mp4

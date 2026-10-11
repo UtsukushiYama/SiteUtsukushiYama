@@ -22,3 +22,7 @@ for (const name of ['jquery', 'bootstrap', '@fortawesome/fontawesome-free', '@po
   await cp(`node_modules/${name}/${candidates[0]}`, `assets/vendor/${name.replaceAll('/', '-')}-LICENSE`);
 }
 console.log('Bibliotecas locais atualizadas a partir do package-lock.json.');
+for(const name of ['jquery.min.js','bootstrap.bundle.min.js','bootstrap.min.css','fontawesome','jquery-LICENSE','bootstrap-LICENSE','@fortawesome-fontawesome-free-LICENSE']) {
+  await mkdir('painel-placar/assets/vendor',{recursive:true});
+  await cp(`assets/vendor/${name}`,`painel-placar/assets/vendor/${name}`,{recursive:true});
+}

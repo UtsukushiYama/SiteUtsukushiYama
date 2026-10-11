@@ -32,37 +32,6 @@
     "required": "iniciante",
     "scripts": []
   },
-  "PainelKata.html": {
-    "required": "painelplacar",
-    "scripts": [
-      "js/pages/painelkata-1.js",
-      "js/pages/painelkata-events.js"
-    ]
-  },
-  "PainelKumite.html": {
-    "required": "painelplacar",
-    "scripts": [
-      "js/pages/painelkumite-1.js",
-      "js/pages/painelkumite-events.js"
-    ]
-  },
-  "PainelKumiteJogai.html": {
-    "required": "painelplacar",
-    "scripts": [
-      "js/pages/painelkumitejogai-1.js",
-      "js/pages/painelkumitejogai-events.js"
-    ]
-  },
-  "PainelLanding.html": {
-    "required": null,
-    "scripts": [
-      "js/pages/painellanding-0.js"
-    ]
-  },
-  "PainelPlacar.html": {
-    "required": null,
-    "scripts": []
-  },
   "Projeto-Shinkyoku.html": {
     "required": "admin",
     "scripts": [
@@ -165,7 +134,8 @@
   "blog.html": {
     "required": "iniciante",
     "scripts": [
-      "js/blog-cards-data.js"
+      "js/blog-cards-data.js",
+      "js/blog-feed.js"
     ]
   },
   "contact.html": {
@@ -227,7 +197,7 @@
     "required": null,
     "scripts": [
       "js/blog-cards-data.js",
-      "js/pages/index-12.js"
+      "js/blog-feed.js"
     ]
   },
   "kata-dicas.html": {

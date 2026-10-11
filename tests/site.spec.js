@@ -2,10 +2,31 @@ const {test,expect}=require('@playwright/test');const fs=require('node:fs');
 function password(){return JSON.parse(fs.readFileSync('storage/test-fixtures.json','utf8')).password;}
 async function login(request,name='admin'){const r=await request.post('/api/login.php',{data:{username:`uy_test_${name}`,password:password()}});expect(r.status()).toBe(200);return r;}
 async function closeStory(page){await expect(page.locator('.uy-story-reader')).toBeVisible();await page.getByRole('button',{name:'Fechar story',exact:true}).click();}
-test('stories appear on each page access, navigate all slides and support keyboard close',async({page})=>{
+test('story automatically opens once per day while manual reading and navigation remain available',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/index.html');await expect(page.locator('#story-count')).toHaveText('1 de 6');
  await page.getByRole('button',{name:'Pausar story'}).click();for(let i=2;i<=6;i++){await page.getByRole('button',{name:'Próxima tela'}).click();await expect(page.locator('#story-count')).toHaveText(`${i} de 6`);}
- await page.getByRole('button',{name:'Concluir story'}).click();await expect(page.locator('.uy-story-reader')).not.toBeVisible();await page.reload();await expect(page.locator('.uy-story-reader')).toBeVisible();await page.keyboard.press('Escape');expect(errors).toEqual([]);
+ await page.getByRole('button',{name:'Concluir story'}).click();await expect(page.locator('.uy-story-reader')).not.toBeVisible();await page.reload();await page.waitForFunction(()=>window.UY?.ready===true);await expect(page.locator('.uy-story-reader')).not.toBeVisible();
+ await page.goto('/stories.html');await page.waitForFunction(()=>window.UY?.ready===true);await expect(page.locator('.uy-story-reader')).not.toBeVisible();await page.getByRole('button',{name:'Ler story',exact:true}).click();await expect(page.locator('.uy-story-reader')).toBeVisible();await page.keyboard.press('Escape');expect(errors).toEqual([]);
+});
+test('automatic story resets at midnight in Brasilia and direct story links can reopen it',async({page})=>{
+ await page.clock.setFixedTime(new Date('2026-10-12T02:50:00Z'));await page.goto('/index.html');await closeStory(page);
+ await page.clock.setFixedTime(new Date('2026-10-12T02:59:00Z'));await page.reload();await page.waitForFunction(()=>window.UY?.ready===true);await expect(page.locator('.uy-story-reader')).not.toBeVisible();
+ await page.clock.setFixedTime(new Date('2026-10-12T03:01:00Z'));await page.reload();await closeStory(page);
+ await page.goto('/stories.html#medo');await expect(page.locator('.uy-story-reader')).toBeVisible();
+});
+test('home shows the three latest public news summaries and initializes their carousels without login',async({page,request})=>{
+ expect((await request.get('/blog.html',{maxRedirects:0})).status()).toBe(302);
+ await page.goto('/index.html');await closeStory(page);
+ const cards=page.locator('#blog-cards-container > [data-blog-card]');await expect(cards).toHaveCount(3);
+ expect(await cards.evaluateAll(elements=>elements.map(e=>e.dataset.blogCard))).toEqual(['card20','card19','card18']);
+ for(const id of ['card20','card19','card18']){
+  await expect(page.locator(`#${id} h3`)).toBeVisible();await expect(page.locator(`#${id} a[href="blog-${id}.html"]`)).toBeVisible();
+  await expect(page.locator(`#carousel-${id} .carousel-item.active`)).toHaveCount(1);
+  expect(await page.locator(`#carousel-${id} .carousel-item`).count()).toBeGreaterThan(1);
+ }
+ await page.evaluate(()=>{const carousel=bootstrap.Carousel.getInstance(document.getElementById('carousel-card20'));carousel.pause();carousel.to(0);});
+ await expect(page.locator('#carousel-card20 .carousel-item').first()).toHaveClass(/active/);
+ await page.locator('#card20 .carousel-control-next').click();await expect(page.locator('#carousel-card20 .carousel-item').nth(1)).toHaveClass(/active/);
 });
 test('Instagram ZIP contains six valid 1080×1920 PNGs and source credit',async({page})=>{
  await page.goto('/stories.html');await closeStory(page);const event=page.waitForEvent('download');await page.getByRole('button',{name:'Baixar para Instagram',exact:true}).click();const download=await event;expect(download.suggestedFilename()).toBe('medo-instagram.zip');
@@ -52,19 +73,6 @@ test('administrator previews, saves and retrieves a new story with escaped text'
  await page.getByRole('button',{name:'Prévia',exact:true}).click();await expect(page.locator('#story-count')).toHaveText('1 de 1');await page.getByRole('button',{name:'Fechar story',exact:true}).click();await page.getByRole('button',{name:'Salvar e publicar no site'}).click();await expect(page.locator('#story-editor')).not.toBeVisible();
  const result=await(await page.request.get('/api/stories.php')).json();expect(result.data.stories[0].id).toBe('story-teste');expect(await page.evaluate(()=>window.injected)).toBeUndefined();
 });
-test('Kata calculates the sum without highest/lowest score and adds judges',async({page})=>{
- await login(page.request);await page.goto('/PainelKata.html');await expect(page.locator('.judge-input')).toHaveCount(5);
- for(let i=1;i<=5;i++){await page.locator(`#judge${i}`).fill(String([5,6,7,8,8][i-1]));await page.locator(`#judge${i}`).blur();}
- await expect(page.locator('#finalScore')).toHaveText('21,00');await page.locator('#removeJudgeTaskbar').click();await expect(page.locator('.judge-input')).toHaveCount(3);await page.locator('#addJudgeTaskbar').click();await expect(page.locator('.judge-input')).toHaveCount(5);
- expect(await page.locator('.uy-story-reader').count()).toBe(0);
-});
-test('Kumite controls score, timer and pause without opening a story',async({page})=>{
- await login(page.request);await page.goto('/PainelKumite.html');await page.waitForFunction(()=>window.UY?.ready===true);
- await page.locator('[data-action-click=a2]').click();await expect(page.locator('#shiroWazaari')).toHaveValue('1');await page.locator('[data-action-click=a3]').click();await expect(page.locator('#shiroWazaari')).toHaveValue('0');
- await page.locator('#startTimer').click();await expect(page.locator('#timerDisplay')).not.toHaveText('2:00');await page.locator('#pauseTimer').click();const time=await page.locator('#timerDisplay').innerText();await page.waitForTimeout(1100);await expect(page.locator('#timerDisplay')).toHaveText(time);
- expect(await page.locator('.uy-story-reader').count()).toBe(0);
-});
-
 test('desktop header stays within the viewport and login remains legible',async({page})=>{
  await page.goto('/stories.html');await closeStory(page);await page.mouse.move(5,800);
  for(const width of [1024,1280,1440]){

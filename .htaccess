@@ -5,6 +5,8 @@ RewriteRule ^(?:config|storage|tools|tests|docs|node_modules)(?:/|$) - [F,L,NC]
 RewriteRule (^|/)\. - [F,L]
 RewriteRule ^(?:package(?:-lock)?\.json|playwright\.config\.js|uy_database\.sql|README\.md)$ - [F,L,NC]
 RewriteRule ^api/config\.php$ - [F,L,NC]
+# Preserve old bookmarks while keeping the product in its independent directory.
+RewriteRule ^(Painel(?:Landing|Placar|Kata|Kumite|KumiteJogai)\.html)$ painel-placar/$1 [R=302,L]
 RewriteRule ^(?:header|footer|blog-sidebar|modal-assinatura|modal-construcao)\.html$ - [L]
 RewriteRule ^$ page.php?page=index.html [L]
 RewriteRule ^([A-Za-z0-9_-]+\.html)$ page.php?page=$1 [L,QSA]

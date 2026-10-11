@@ -423,13 +423,12 @@ function loadCarouselImages(cardId, carouselId) {
  */
 document.addEventListener('site:ready', function() {
   // Para blog.html - cards na lista
-  const blogCards = ['card20', 'card19','card18','card17', 'card16', 'card15','card14', 'card13', 'card11', 'card10',
-    'card9', 'card8', 'card7'];
+  const blogCards = Object.keys(blogCardsData);
 
   blogCards.forEach(cardId => {
-    const carousel = document.querySelector(`#${cardId}.carousel`);
+    const carousel = document.querySelector(`[data-blog-card="${cardId}"] .carousel`) || document.querySelector(`#${cardId}.carousel`);
     if (carousel) {
-      loadCarouselImages(cardId, cardId);
+      loadCarouselImages(cardId, carousel.id);
     }
   });
 

@@ -1,0 +1,33 @@
+{
+  "PainelKata.html": {
+    "required": "kata",
+    "scripts": [
+      "js/pages/painelkata-1.js",
+      "js/pages/painelkata-events.js"
+    ]
+  },
+  "PainelKumite.html": {
+    "required": "kumite",
+    "scripts": [
+      "js/pages/painelkumite-1.js",
+      "js/pages/painelkumite-events.js"
+    ]
+  },
+  "PainelKumiteJogai.html": {
+    "required": "kumite",
+    "scripts": [
+      "js/pages/painelkumitejogai-1.js",
+      "js/pages/painelkumitejogai-events.js"
+    ]
+  },
+  "PainelLanding.html": {
+    "required": null,
+    "scripts": [
+      "js/pages/painellanding-0.js"
+    ]
+  },
+  "PainelPlacar.html": {
+    "required": null,
+    "scripts": []
+  }
+}

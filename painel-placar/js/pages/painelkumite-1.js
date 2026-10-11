@@ -7,16 +7,16 @@
 
 
         function loadSharedData() {
-            const eventTitle = localStorage.getItem('event_title');
-            const eventSubtitle = localStorage.getItem('event_subtitle');
+            const eventTitle = window.PP.store.get('event_title');
+            const eventSubtitle = window.PP.store.get('event_subtitle');
 
             if (eventTitle) document.getElementById('eventTitleDisplay').value = eventTitle;
             if (eventSubtitle) document.getElementById('eventSubtitleDisplay').value = eventSubtitle;
         }
 
         function saveSharedData() {
-            localStorage.setItem('event_title', document.getElementById('eventTitleDisplay').value);
-            localStorage.setItem('event_subtitle', document.getElementById('eventSubtitleDisplay').value);
+            window.PP.store.set('event_title', document.getElementById('eventTitleDisplay').value);
+            window.PP.store.set('event_subtitle', document.getElementById('eventSubtitleDisplay').value);
         }
 
 
@@ -141,7 +141,7 @@
             });
         }
 
-        document.addEventListener('site:ready', function () {
+        document.addEventListener('placar:ready', function () {
             const sessionData = checkAuth();
             if (!sessionData) return;
 
@@ -233,10 +233,6 @@
                     class: 'action-mode',
                     tooltip: 'Mudar para Kata',
                     action: () => {
-                        // Marcar navegação interna antes de trocar
-                        if (window.SessionManager) {
-                            window.SessionManager.markNavigating();
-                        }
                         window.location.href = 'PainelKata.html';
                     }
                 });
@@ -310,11 +306,9 @@
             document.getElementById('shiroWazaari').value = '0';
             document.getElementById('shiroChui').value = '0';
             document.getElementById('shiroGentei').value = '0';
-            document.getElementById('shiroJogai').value = '0';
             document.getElementById('akaWazaari').value = '0';
             document.getElementById('akaChui').value = '0';
             document.getElementById('akaGentei').value = '0';
-            document.getElementById('akaJogai').value = '0';
 
             document.getElementById('shiroName').value = 'SHIRO';
             document.getElementById('akaName').value = 'AKA';

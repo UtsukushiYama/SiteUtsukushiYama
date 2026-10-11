@@ -1,0 +1,1392 @@
+:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]){
+    font-family: "Arial", sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    background: #0a0a0a;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .hero-section{
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .hero-section::before{
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+    animation: pulse 8s ease-in-out infinite;
+}@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .hero-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,<svg width=\"100\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\"><path d=\"M 50 0 L 0 0 0 50\" fill=\"none\" stroke=\"rgba(255,255,255,0.03)\" stroke-width=\"1\"/></pattern></defs><rect width=\"100\" height=\"100\" fill=\"url(%23grid)\" /></svg>");
+    opacity: 0.3;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .hero-content{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px;
+    max-width: 900px;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .hero-icon{
+    font-size: 80px;
+    color: #667eea;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .hero-title{
+    font-size: 64px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+    text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .hero-subtitle{
+    font-size: 28px;
+    color: #667eea;
+    margin-bottom: 20px;
+    font-weight: 600;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .hero-description{
+    font-size: 20px;
+    color: #ccc;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .hero-buttons{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .btn-primary,:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .btn-secondary{
+    padding: 18px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .btn-primary{
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .btn-primary:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .btn-secondary{
+    background: transparent;
+    color: white;
+    border: 2px solid #667eea;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .btn-secondary:hover{
+    background: rgba(102, 126, 234, 0.2);
+    transform: translateY(-5px);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .scroll-indicator{
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #667eea;
+    font-size: 30px;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    z-index: 3;
+}@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .features-section,:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .demo-section,:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .benefits-section,:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .pricing-section{
+    padding: 100px 40px;
+    background: #0a0a0a;
+    position: relative;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .features-section{
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .section-title{
+    text-align: center;
+    font-size: 48px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .section-title::after{
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 2px;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .features-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .feature-card{
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    opacity: 0;
+    transform: translateY(30px);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .feature-card.fade-in{
+    opacity: 1;
+    transform: translateY(0);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .feature-card:hover{
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(102, 126, 234, 0.5);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .feature-icon{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 40px;
+    color: white;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .feature-icon.kumite{ background: linear-gradient(135deg, #ff0000, #cc0000); }:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .feature-icon.kata{ background: linear-gradient(135deg, #667eea, #764ba2); }:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .feature-icon.multi{ background: linear-gradient(135deg, #17a2b8, #138496); }:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .feature-icon.custom{ background: linear-gradient(135deg, #ffc107, #e0a800); }:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .feature-icon.control{ background: linear-gradient(135deg, #28a745, #218838); }:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .feature-icon.pro{ background: linear-gradient(135deg, #dc3545, #c82333); }:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .feature-card h3{
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 700;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .feature-card p{
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 16px;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .demo-section{
+    background: #1a1a2e;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .demo-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .demo-card{
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    opacity: 0;
+    transform: translateY(30px);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .demo-card.fade-in{
+    opacity: 1;
+    transform: translateY(0);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .demo-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .demo-image{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    color: white;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .kumite-bg{
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .kata-bg{
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .demo-card h3{
+    padding: 20px 30px 10px;
+    font-size: 28px;
+    color: #fff;
+    font-weight: 700;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .demo-card p{
+    padding: 0 30px 30px;
+    color: #ccc;
+    line-height: 1.6;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .benefits-section{
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .benefits-list{
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    gap: 30px;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .benefit-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-30px);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .benefit-item.fade-in{
+    opacity: 1;
+    transform: translateX(0);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .benefit-item:hover{
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(10px);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .benefit-item i{
+    font-size: 30px;
+    color: #667eea;
+    flex-shrink: 0;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .benefit-item h4{
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 8px;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .benefit-item p{
+    color: #ccc;
+    line-height: 1.5;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .pricing-section{
+    background: #1a1a2e;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .pricing-info{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .pricing-card{
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    transition: all 0.4s ease;
+    position: relative;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .pricing-card.featured{
+    border-color: #667eea;
+    transform: scale(1.05);
+    background: rgba(102, 126, 234, 0.1);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .pricing-card:hover{
+    transform: translateY(-10px) scale(1.02);
+    border-color: #667eea;
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .pricing-badge{
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .pricing-icon{
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 35px;
+    color: white;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .pricing-card h3{
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 15px;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .pricing-desc{
+    color: #ccc;
+    margin-bottom: 30px;
+    font-size: 16px;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .pricing-features{
+    list-style: none;
+    margin-top: 30px;
+    text-align: left;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .pricing-features li{
+    color: #ccc;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .pricing-features li:last-child{
+    border-bottom: none;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .pricing-features i{
+    color: #667eea;
+    font-size: 18px;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .cta-section{
+    padding: 100px 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    text-align: center;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .cta-content h2{
+    font-size: 48px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .cta-content p{
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .cta-buttons{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .btn-cta-primary,:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .btn-cta-secondary{
+    padding: 20px 50px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .btn-cta-primary{
+    background: white;
+    color: #667eea;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .btn-cta-primary:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .btn-cta-secondary{
+    background: transparent;
+    color: white;
+    border: 3px solid white;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .btn-cta-secondary:hover{
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .footer{
+    background: #0a0a0a;
+    padding: 60px 40px 30px;
+    text-align: center;
+    border-top: 1px solid rgba(102, 126, 234, 0.2);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .footer-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .footer-logo i{
+    font-size: 40px;
+    color: #667eea;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .footer-logo h3{
+    font-size: 28px;
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 2px;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .footer-text{
+    color: #999;
+    margin-bottom: 30px;
+    font-size: 16px;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .footer-links{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 30px;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .footer-links a{
+    color: #667eea;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .footer-links a:hover{
+    color: #764ba2;
+    transform: translateY(-3px);
+}:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .footer-copyright{
+    color: #666;
+    font-size: 14px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}@media  (max-width: 768px) {:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .hero-title{
+        font-size: 40px;
+    }:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .hero-subtitle{
+        font-size: 20px;
+    }:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .hero-description{
+        font-size: 16px;
+    }:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .section-title{
+        font-size: 32px;
+    }:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .features-grid,:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .demo-grid,:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .pricing-info{
+        grid-template-columns: 1fr;
+    }:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .hero-buttons,:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .cta-buttons{
+        flex-direction: column;
+        width: 100%;
+    }:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .btn-primary,:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .btn-secondary,:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .btn-cta-primary,:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .btn-cta-secondary{
+        width: 100%;
+        justify-content: center;
+    }:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .cta-content h2{
+        font-size: 32px;
+    }:where(body[data-page=painellanding],body[data-page=painelkata],body[data-page=painelkumite],body[data-page=painelkumitejogai]) .footer-links{
+        flex-direction: column;
+        align-items: center;
+    }}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"],body[data-page="painelplacar"]) * {
+margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) {
+font-family: "Arial", sans-serif;
+        background-color: #e8e8e8;
+        color: black;
+        height: 100vh;
+        overflow: hidden;
+}:where(body[data-page="painelkata"]) .kata-mode {
+display: flex;
+        flex-direction: column;
+        height: 100vh;
+        align-items: center;
+        padding: 0;
+        background: #e8e8e8;
+}:where(body[data-page="painelkata"]) .kata-header {
+background: #e8e8e8;
+        padding: 1vh 2vw;
+        text-align: center;
+        border-bottom: 3px solid #333;
+        width: 100%;
+        position: relative;
+        flex-shrink: 0;
+        min-height: 8vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+}:where(body[data-page="painelkata"]) .kata-event-title {
+font-weight: bold;
+        margin-bottom: 0.3vh;
+        text-transform: uppercase;
+        background: transparent;
+        border: none;
+        outline: none;
+        width: 100%;
+        text-align: center;
+}:where(body[data-page="painelkata"]) .kata-event-subtitle {
+color: #555;
+        background: transparent;
+        border: none;
+        outline: none;
+        width: 100%;
+        text-align: center;
+}:where(body[data-page="painelkata"]) .kata-content {
+flex: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 20px;
+        overflow-y: auto;
+        min-height: 0;
+}:where(body[data-page="painelkata"]) .competitor-name {
+font-weight: 400;
+        margin: 1vh 0;
+        padding: 0;
+        text-align: center;
+        background: none;
+        border: none;
+        outline: none;
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        color: #000;
+        line-height: 1;
+        flex-shrink: 0;
+}:where(body[data-page="painelkata"]) .scores-panel {
+background-color: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 1vh 2vw;
+        max-width: 100%;
+        width: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+}:where(body[data-page="painelkata"]) .scores-grid {
+display: flex;
+        justify-content: center;
+        gap: 1.5vw;
+        margin-bottom: 1vh;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+}:where(body[data-page="painelkata"]) .judge-score {
+text-align: center;
+        position: relative;
+}:where(body[data-page="painelkata"]) .judge-score.discarded::after {
+content: "✖";
+        position: absolute;
+        top: -0.8vh;
+        right: -0.8vw;
+        width: 2.5vw;
+        height: 2.5vw;
+        background: #dc3545;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        box-shadow: 0 0.3vh 1vh rgba(220, 53, 69, 0.4);
+        z-index: 10;
+        animation: fadeInIcon 0.4s ease;
+}@keyframes fadeInIcon {
+        from {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }:where(body[data-page="painelkata"]) .judge-input {
+font-weight: bold;
+        text-align: center;
+        border: 0.2vw solid #333;
+        border-radius: 0.5vw;
+        background-color: white;
+        color: black;
+        padding: 0.5vh 1vw;
+        position: relative;
+        cursor: text;
+        transition: all 0.5s ease;
+        min-width: 8vw;
+        min-height: 8vh;
+}:where(body[data-page="painelkata"]) .judge-input::-webkit-outer-spin-button,
+:where(body[data-page="painelkata"]) .judge-input::-webkit-inner-spin-button {
+-webkit-appearance: inner-spin-button;
+        opacity: 1;
+}:where(body[data-page="painelkata"]) .judge-input.discarded {
+background-color: rgba(255, 200, 200, 0.3);
+        color: #888;
+        opacity: 0.6;
+        position: relative;
+}:where(body[data-page="painelkata"]) .judge-input.discarded::after {
+content: "✖";
+        position: absolute;
+        top: -0.8vh;
+        right: -0.8vw;
+        width: 2.5vw;
+        height: 2.5vw;
+        background: #dc3545;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        box-shadow: 0 0.3vh 1vh rgba(220, 53, 69, 0.4);
+        z-index: 10;
+        animation: fadeInIcon 0.4s ease;
+}:where(body[data-page="painelkata"]) .judge-input.discarded::before {
+content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent 40%, rgba(220, 53, 69, 0.5) 48%, rgba(220, 53, 69, 0.5) 52%, transparent 60%);
+        border-radius: 0.5vw;
+        z-index: 5;
+        pointer-events: none;
+}:where(body[data-page="painelkata"]) .final-score {
+flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 2vh 2vw;
+        min-height: 0;
+        position: relative;
+}:where(body[data-page="painelkata"]) .final-score-value {
+color: #007bff;
+        font-weight: bold;
+        line-height: 0.9;
+        font-family: "Arial", monospace;
+        text-align: center;
+        white-space: nowrap;
+}:where(body[data-page="painelkata"]) .kata-controls {
+display: none;
+}:where(body[data-page="painelkata"]) .logo-container-kata {
+display: none;
+}:where(body[data-page="painelkata"]) .logo-img {
+width: 8vw;
+        height: 8vw;
+        border-radius: 50%;
+        border: 4px solid #333;
+        background: white;
+        object-fit: contain;
+        display: block;
+}:where(body[data-page="painelkata"]) .taskbar {
+background: #e8e8e8;
+        border-top: 3px solid #333;
+        padding: 1.5vh 3vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1vw;
+        min-height: 8vh;
+        width: 100%;
+        flex-shrink: 0;
+}:where(body[data-page="painelkata"]) .taskbar-btn {
+padding: 1vh 2vw;
+        font-size: 0.9vw;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+}:where(body[data-page="painelkata"]) .btn-add {
+background: #17a2b8;
+        color: white;
+}:where(body[data-page="painelkata"]) .btn-add:hover {
+background: #138496;
+}:where(body[data-page="painelkata"]) .btn-remove {
+background: #ffc107;
+        color: #000;
+}:where(body[data-page="painelkata"]) .btn-remove:hover {
+background: #e0a800;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .btn-reset {
+background: #dc3545;
+        color: white;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .btn-reset:hover {
+background: #c82333;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-container {
+position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-main {
+width: 6vw;
+        height: 6vw;
+        min-width: 60px;
+        min-height: 60px;
+        max-width: 120px;
+        max-height: 120px;
+        background: white;
+        border: 0.3vw solid #333;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 0.5vh 2vh rgba(0, 0, 0, 0.3);
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-logo {
+width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: contain;
+        display: block;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-main::before {
+content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 50%;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-main:hover::before {
+opacity: 1;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-main:hover {
+transform: translateY(-0.3vh) scale(1.1);
+        box-shadow: 0 1vh 3vh rgba(0, 0, 0, 0.4);
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-icon {
+position: absolute;
+        z-index: 2;
+        transition: transform 0.3s ease;
+        display: none;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-container:hover .speed-dial-icon {
+transform: rotate(45deg);
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-actions {
+position: absolute;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1vh;
+        padding-bottom: calc(6vw + 60px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        pointer-events: none;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-container:hover .speed-dial-actions {
+opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-action {
+width: 4vw;
+        height: 4vw;
+        min-width: 50px;
+        min-height: 50px;
+        max-width: 80px;
+        max-height: 80px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: 0 0.5vh 1.5vh rgba(0, 0, 0, 0.25);
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+        transform: scale(0) translateY(2vh);
+        animation: none;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-container:hover .speed-dial-action {
+animation: slideInDial 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-container:hover .speed-dial-action:nth-child(1) {
+animation-delay: 0.05s;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-container:hover .speed-dial-action:nth-child(2) {
+animation-delay: 0.1s;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-container:hover .speed-dial-action:nth-child(3) {
+animation-delay: 0.15s;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-container:hover .speed-dial-action:nth-child(4) {
+animation-delay: 0.2s;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-container:hover .speed-dial-action:nth-child(5) {
+animation-delay: 0.25s;
+}@keyframes slideInDial {
+        to {
+            transform: scale(1) translateY(0);
+        }
+    }:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-action:hover {
+transform: scale(1.15) translateY(-0.2vh);
+        box-shadow: 0 0.8vh 2vh rgba(0, 0, 0, 0.35);
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-action .icon {
+margin-bottom: 0.2vh;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-action .text {
+font-weight: bold;
+        text-transform: uppercase;
+        line-height: 1;
+        text-align: center;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .action-mode {
+background: #4facfe;
+}:where(body[data-page="painelkata"]) .action-judge-add {
+background: #17a2b8;
+}:where(body[data-page="painelkata"]) .action-judge-remove {
+background: #ffc107;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .action-reset {
+background: #dc3545;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .action-logout {
+background: #ff4757;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-action::before {
+content: attr(data-tooltip);
+        position: absolute;
+        right: calc(100% + 1vw);
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 0.8vh 1vw;
+        border-radius: 0.5vw;
+        font-weight: 500;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        pointer-events: none;
+        z-index: 1001;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-action::after {
+content: "";
+        position: absolute;
+        right: calc(100% + 0.3vw);
+        top: 50%;
+        transform: translateY(-50%);
+        border: 0.4vw solid transparent;
+        border-left-color: rgba(0, 0, 0, 0.9);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        pointer-events: none;
+}:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-action:hover::before,
+:where(body[data-page="painelkata"],body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .speed-dial-action:hover::after {
+opacity: 1;
+        visibility: visible;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .kumite-layout {
+height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: #e8e8e8;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .event-header {
+background: #e8e8e8;
+        padding: 1vh 2vw;
+        text-align: center;
+        border-bottom: 3px solid #333;
+        position: relative;
+        min-height: 8vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .event-title {
+font-weight: bold;
+        margin-bottom: 0.3vh;
+        text-transform: uppercase;
+        background: transparent;
+        border: none;
+        outline: none;
+        width: 100%;
+        text-align: center;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .event-subtitle {
+color: #555;
+        background: transparent;
+        border: none;
+        outline: none;
+        width: 100%;
+        text-align: center;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .kumite-main {
+flex: 1;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        min-height: 0;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .shiro-side {
+flex: 1;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        padding: 0 3vw 2vh 3vw;
+        position: relative;
+        align-items: flex-start;
+        justify-content: flex-start;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .shiro-title {
+font-weight: 400;
+        color: #000;
+        text-align: left;
+        margin-bottom: 2vh;
+        margin-top: 2vh;
+        padding-top: 0;
+        padding-right: 2vw;
+        letter-spacing: -0.02em;
+        background: transparent;
+        border: none;
+        outline: none;
+        width: 100%;
+        text-transform: uppercase;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .aka-side {
+flex: 1;
+        background: #ff0000;
+        display: flex;
+        flex-direction: column;
+        padding: 0 3vw 2vh 3vw;
+        position: relative;
+        align-items: flex-end;
+        justify-content: flex-start;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .aka-title {
+font-weight: 400;
+        color: #ffffff;
+        text-align: right;
+        margin-bottom: 2vh;
+        margin-top: 2vh;
+        padding-top: 0;
+        padding-left: 2vw;
+        letter-spacing: -0.02em;
+        background: transparent;
+        border: none;
+        outline: none;
+        width: 100%;
+        text-transform: uppercase;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .score-box {
+background: #f5f5f5;
+        border: 0.3vw solid #999;
+        border-radius: 1vw;
+        padding: 1.5vh 2vw;
+        margin-bottom: 2vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 18vh;
+        width: 55%;
+        flex-direction: row-reverse;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .shiro-side .score-box {
+background: #f5f5f5;
+        border-color: #999;
+        flex-direction: row;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .aka-side .score-box {
+background: #ff6666;
+        border-color: #cc0000;
+        flex-direction: row;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .score-label {
+font-weight: bold;
+        color: #000;
+        white-space: nowrap;
+        flex: 1;
+        text-align: right;
+        align-self: flex-start;
+        padding-top: 1vh;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .aka-side .score-label {
+color: #fff;
+        text-align: left;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .score-input {
+font-weight: bold;
+        text-align: center;
+        border: none;
+        background: transparent;
+        outline: none;
+        color: #000;
+        flex-shrink: 0;
+        min-width: 15%;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .aka-side .score-input {
+color: #fff;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .score-input::-webkit-outer-spin-button,
+:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .score-input::-webkit-inner-spin-button {
+-webkit-appearance: inner-spin-button;
+        opacity: 1;
+        margin: 0;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .score-controls {
+display: flex;
+        flex-direction: column;
+        gap: 3vh;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .score-btn {
+line-height: 1;
+        border: 0.1vw solid #999;
+        border-radius: 0.3vw;
+        background: linear-gradient(180deg, #fff 0%, #f0f0f0 100%);
+        color: #333;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        font-weight: 600;
+        box-shadow: 0 0.1vh 0.2vh rgba(0, 0, 0, 0.1);
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .aka-side .score-btn {
+background: linear-gradient(180deg, #ff5555 0%, #ff3333 100%);
+        color: #fff;
+        border-color: #cc0000;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .score-btn:hover {
+background: linear-gradient(180deg, #f8f8f8 0%, #e8e8e8 100%);
+        border-color: #666;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .aka-side .score-btn:hover {
+background: linear-gradient(180deg, #ff6666 0%, #ff4444 100%);
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .score-btn:active {
+transform: translateY(0.1vh);
+        box-shadow: 0 0 0.1vh rgba(0, 0, 0, 0.2);
+        background: linear-gradient(180deg, #e8e8e8 0%, #f0f0f0 100%);
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .aka-side .score-btn:active {
+background: linear-gradient(180deg, #ff3333 0%, #ff5555 100%);
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-central {
+position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        text-align: center;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .koto-display {
+background: #ddd;
+        border: 0.3vw solid #999;
+        border-radius: 1vw 1vw 0 0;
+        padding: 1.5vh 3vw;
+        font-weight: bold;
+        color: #666;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5vw;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .koto-controls {
+display: flex;
+        align-items: center;
+        gap: 0.8vw;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .koto-buttons {
+display: flex;
+        flex-direction: column;
+        gap: 0.5vh;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .koto-btn {
+line-height: 1;
+        border: 0.1vw solid #999;
+        border-radius: 0.3vw;
+        background: linear-gradient(180deg, #fff 0%, #f0f0f0 100%);
+        color: #333;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        font-weight: 600;
+        box-shadow: 0 0.1vh 0.2vh rgba(0, 0, 0, 0.1);
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .koto-btn:hover {
+background: linear-gradient(180deg, #f8f8f8 0%, #e8e8e8 100%);
+        border-color: #666;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .koto-btn:active {
+transform: translateY(0.1vh);
+        box-shadow: 0 0 0.1vh rgba(0, 0, 0, 0.2);
+        background: linear-gradient(180deg, #e8e8e8 0%, #f0f0f0 100%);
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .koto-input {
+font-weight: bold;
+        text-align: center;
+        border: none;
+        background: transparent;
+        color: #666;
+        outline: none;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .koto-input::-webkit-outer-spin-button,
+:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .koto-input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+        margin: 0;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-display-box {
+background: #f5f5f5;
+        border: 0.3vw solid #999;
+        border-top: none;
+        border-radius: 0 0 1vw 1vw;
+        padding: 3vh 4vw 2vh 4vw;
+        margin-bottom: 3vh;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-value {
+font-weight: bold;
+        color: #000;
+        font-family: "Arial", monospace;
+        line-height: 1;
+        margin-bottom: 2vh;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-controls-bar {
+display: flex;
+        align-items: center;
+        gap: 1vw;
+        width: 100%;
+        justify-content: center;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-adjust-btn {
+background: linear-gradient(180deg, #4a90e2 0%, #357abd 100%);
+        color: white;
+        border: none;
+        border-radius: 0.5vw;
+        padding: 0.8vh 1.2vw;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+        box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.2);
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-adjust-btn:hover {
+background: linear-gradient(180deg, #5ba3f5 0%, #4a90e2 100%);
+        transform: translateY(-0.1vh);
+        box-shadow: 0 0.3vh 0.6vh rgba(0, 0, 0, 0.25);
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-adjust-btn:active {
+transform: translateY(0);
+        box-shadow: 0 0.1vh 0.2vh rgba(0, 0, 0, 0.2);
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-slider-container {
+flex: 1;
+        display: flex;
+        align-items: center;
+        max-width: 50%;
+        position: relative;
+        height: 20px;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-slider {
+width: 100%;
+        height: 8px;
+        border-radius: 4px;
+        background: transparent;
+        outline: none;
+        cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none;
+        margin: 6px 0;
+        padding: 0;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-slider::-webkit-slider-thumb {
+-webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 3px;
+        background: linear-gradient(180deg, #5ba3f5 0%, #4a90e2 100%);
+        border: 1px solid #357abd;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: all 0.2s ease;
+        position: relative;
+        margin-top: -6px;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-slider::-webkit-slider-thumb:hover {
+transform: scale(1.1);
+        background: linear-gradient(180deg, #6bb4ff 0%, #5ba3f5 100%);
+        border-color: #2a6ba8;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-slider::-webkit-slider-thumb:active {
+transform: scale(1);
+        background: linear-gradient(180deg, #4a90e2 0%, #357abd 100%);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-slider::-moz-range-thumb {
+width: 20px;
+        height: 20px;
+        border-radius: 3px;
+        background: linear-gradient(180deg, #5ba3f5 0%, #4a90e2 100%);
+        border: 1px solid #357abd;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: all 0.2s ease;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-slider::-moz-range-thumb:hover {
+transform: scale(1.1);
+        background: linear-gradient(180deg, #6bb4ff 0%, #5ba3f5 100%);
+        border-color: #2a6ba8;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-slider::-moz-range-thumb:active {
+transform: scale(1);
+        background: linear-gradient(180deg, #4a90e2 0%, #357abd 100%);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-slider::-webkit-slider-runnable-track {
+width: 100%;
+        height: 8px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #e0e0e0 0%, #bbb 100%);
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-slider::-moz-range-track {
+width: 100%;
+        height: 8px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #e0e0e0 0%, #bbb 100%);
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-display-box.warning {
+background-color: #fff3cd;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-display-box.warning .timer-value {
+color: #ff0000;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-display-box.paused {
+animation: pausedBlink 1s infinite;
+}@keyframes pausedBlink {
+        0%, 50% {
+            background-color: #ffc107;
+        }
+        51%, 100% {
+            background-color: #f5f5f5;
+        }
+    }:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-display-box.finished {
+background-color: red;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .timer-display-box.finished .timer-value {
+color: white;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .logo-container {
+display: none;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .logo-img {
+width: 8vw;
+        height: 8vw;
+        border-radius: 50%;
+        border: 0.3vw solid #333;
+        background: white;
+        object-fit: contain;
+        display: block;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .taskbar {
+background: #e8e8e8;
+        border-top: 3px solid #333;
+        padding: 1.5vh 3vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1vw;
+        min-height: 8vh;
+        flex-shrink: 0;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .taskbar-btn {
+padding: 1vh 2vw;
+        font-weight: bold;
+        border: none;
+        border-radius: 0.6vw;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .btn-start {
+background: #17a2b8;
+        color: white;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .btn-start:hover {
+background: #138496;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .btn-pause {
+background: #ffc107;
+        color: #000;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .btn-pause:hover {
+background: #e0a800;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .time-controls {
+display: none;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .action-timer {
+background: #17a2b8;
+}:where(body[data-page="painelkumite"],body[data-page="painelkumitejogai"]) .action-pause {
+background: #ffc107;
+}:where(body[data-page="painelplacar"]) {
+font-family: "Arial", sans-serif;
+        height: 100vh;
+        overflow: hidden;
+}:where(body[data-page="painelplacar"]) .login-overlay {
+position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+            url("../img/PainelPlacarCapa.png") no-repeat center center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}:where(body[data-page="painelplacar"]) .login-container {
+background: rgba(255, 255, 255, 0.65);
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        width: 400px;
+        max-width: 90%;
+        text-align: center;
+        animation: slideIn 0.5s ease-out;
+}@keyframes slideIn {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }:where(body[data-page="painelplacar"]) .login-logo {
+font-size: 48px;
+        color: #667eea;
+        margin-bottom: 20px;
+}:where(body[data-page="painelplacar"]) .login-title {
+font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+}:where(body[data-page="painelplacar"]) .login-subtitle {
+color: #666;
+        margin-bottom: 30px;
+        font-size: 14px;
+}:where(body[data-page="painelplacar"]) .login-form {
+display: flex;
+        flex-direction: column;
+        gap: 20px;
+}:where(body[data-page="painelplacar"]) .login-input-group {
+position: relative;
+}:where(body[data-page="painelplacar"]) .login-input {
+width: 100%;
+        padding: 15px 20px 15px 50px;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        outline: none;
+}:where(body[data-page="painelplacar"]) .login-input:focus {
+border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}:where(body[data-page="painelplacar"]) .login-input-icon {
+position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #999;
+        font-size: 18px;
+}:where(body[data-page="painelplacar"]) .login-button {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+}:where(body[data-page="painelplacar"]) .login-button:hover {
+transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}:where(body[data-page="painelplacar"]) .login-button:disabled {
+opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+}:where(body[data-page="painelplacar"]) .login-error {
+background-color: #fff5f5;
+        color: #e53e3e;
+        padding: 12px;
+        border-radius: 8px;
+        border-left: 4px solid #e53e3e;
+        font-size: 14px;
+        margin-top: 15px;
+        animation: shake 0.5s ease-in-out;
+        display: none;
+}:where(body[data-page="painelplacar"]) .login-error a {
+color: #2563eb;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s ease;
+}:where(body[data-page="painelplacar"]) .login-error a:hover {
+color: #1d4ed8;
+        text-decoration: underline;
+}:where(body[data-page="painelplacar"]) .login-expired {
+background-color: #fffbeb;
+        color: #b45309;
+        padding: 12px;
+        border-radius: 8px;
+        border-left: 4px solid #f59e0b;
+        font-size: 14px;
+        margin-top: 15px;
+        animation: shake 0.5s ease-in-out;
+        display: none;
+}:where(body[data-page="painelplacar"]) .login-expired strong {
+display: block;
+        margin-bottom: 5px;
+        font-size: 15px;
+}@keyframes shake {
+
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+
+        25% {
+            transform: translateX(-5px);
+        }
+
+        75% {
+            transform: translateX(5px);
+        }
+    }:where(body[data-page="painelplacar"]) .login-loading {
+display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}:where(body[data-page="painelplacar"]) .login-spinner {
+width: 20px;
+        height: 20px;
+        border: 2px solid #ffffff40;
+        border-top: 2px solid #ffffff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+}@keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }@keyframes fadein{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}@keyframes swing{0{transform:rotate(0)}10%{transform:rotate(0)}90%{transform:rotate(720deg)}100%{transform:rotate(720deg)}}@-webkit-keyframes swing{0{-webkit-transform:rotate(0)}10%{-webkit-transform:rotate(0)}90%{-webkit-transform:rotate(720deg)}100%{-webkit-transform:rotate(720deg)}}@keyframes spin { to { transform: rotate(360deg); } }@keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }:is(#uy-inline, .pp-inline-03b44ce4766f) {background-image: url("../img/PainelPlacar/DemoKumite2.png"); background-size: cover; background-position: bottom;}:is(#uy-inline, .pp-inline-059ba7fa4870) {width: 100%; height: 100%; object-fit: cover;}:is(#uy-inline, .pp-inline-24916881f843) {background-image: url("../img/PainelPlacar/DemoKata.PNG"); background-size: cover; background-position: bottom;}@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

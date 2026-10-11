@@ -1,6 +1,6 @@
 # Utsukushi Yama
 
-Biblioteca de Kyokushin, stories e placares de campeonato. HTML, CSS, JavaScript e PHP 8.1+, com MySQL/MariaDB para login. Compatível com hospedagem PHP como InfinityFree; não precisa executar Node.js na hospedagem.
+Biblioteca de Kyokushin e stories. O Placar Kyokushin é um produto independente em `painel-placar/`, com pacote, autenticação e tabelas próprios. Ambos usam HTML, CSS, JavaScript e PHP 8.1+, com MySQL/MariaDB para login. Compatíveis com hospedagem PHP como InfinityFree; não precisam executar Node.js na hospedagem.
 
 ## Começar
 
@@ -28,7 +28,9 @@ No ambiente cloud já preparado: `bash tools/cloud-start.sh`. Os binários locai
 | `js/main.js` | Carrosséis, submenus, galeria e interações compartilhadas |
 | `js/pages.json` | Scripts específicos e nível exigido por cada página; usado também pelo servidor |
 | `data/access-levels.json` | Hierarquia única de acesso, lida pelo PHP e pelo navegador |
-| `js/auth.js` | Login único para a biblioteca, placares e editor |
+| `js/auth.js` | Login da biblioteca e do editor de stories |
+| `data/blog-cards.html` | Resumos compartilhados do blog; a home mostra os três primeiros |
+| `js/blog-feed.js` | Carregamento público dos resumos sem depender de uma página restrita |
 | `data/stories.json` | Conteúdo inicial dos stories versionado no Git |
 | `js/story-artwork.js` | Desenho compartilhado das telas no site e das imagens para Instagram |
 
@@ -36,7 +38,7 @@ Nenhuma página ativa mantém blocos de CSS, JS ou manipuladores de eventos inli
 
 ## Stories e Instagram
 
-Abra **Stories · Reflexões** no menu. O story aparece a cada carregamento completo de uma página. Os modos de operação Kata/Kumite mantêm a competição desobstruída; a apresentação comercial e a página de login mostram stories normalmente.
+Abra **Stories · Reflexões** no menu. O story abre automaticamente uma vez por dia, por navegador, considerando a data de Brasília (`America/Sao_Paulo`). Fechar ou concluir essa apresentação impede novas aberturas automáticas nas outras páginas no mesmo dia. O menu, o botão **Ler story** e links diretos permitem reler quando quiser. O módulo independente do placar não carrega os stories da biblioteca.
 
 - Avance/volte com os botões, setas do teclado ou deslize no celular.
 - Use pausar/continuar e Escape para fechar. O avanço automático tem 15 segundos por tela; quem prefere movimento reduzido começa com o story pausado.
@@ -48,16 +50,21 @@ A publicação direta na Meta não está implementada: nesta versão, a geraçã
 
 ## InfinityFree e mídias
 
-Siga [o passo a passo de publicação](docs/INFINITYFREE.md) e [como adicionar imagens e áudios](docs/MIDIAS-E-GITHUB.md). `npm run package` cria `dist/UtsukushiYama-InfinityFree.zip`, sem credenciais, ferramentas ou dependências de desenvolvimento.
+Siga [o passo a passo de publicação](docs/INFINITYFREE.md) e [como adicionar imagens e áudios](docs/MIDIAS-E-GITHUB.md). `npm run package` cria `dist/UtsukushiYama-InfinityFree.zip` e `dist/PainelPlacar-Independente.zip`, sem credenciais, ferramentas ou dependências de desenvolvimento. Os pacotes são independentes; o pacote do site não inclui o placar.
+
+Para instalar, configurar ou comercializar o placar separadamente, veja [o guia do módulo](painel-placar/README.md). Ele pode compartilhar o banco físico e a hospedagem do site usando somente suas próprias tabelas `placar_*`. O menu do site contém apenas um link para o produto instalado em `painel-placar/`.
+
+Os resumos de notícias ficam em `data/blog-cards.html`, na ordem de publicação, do mais recente para o mais antigo. Inclua novos resumos no início desse arquivo e as mídias correspondentes em `js/blog-cards-data.js`. A home escolhe os três primeiros automaticamente, e `blog.html` usa a mesma fonte para a lista completa. Os artigos continuam com suas regras de acesso.
 
 O GitHub guarda o código e executa verificações; GitHub Pages não executa este backend PHP. Um push **não** atualiza o InfinityFree automaticamente.
 
 ## Verificar alterações
 
-Crie um banco separado chamado `uy_test_db` e importe o mesmo SQL. O usuário configurado deve ter acesso a esse banco. O teste se recusa a criar contas fora de `uy_test_db`. Publicações de teste usam uma pasta isolada, sem tocar no conteúdo do editor.
+Crie um banco separado chamado `uy_test_db` e importe `uy_database.sql` e `painel-placar/placar_database.sql`. Configure os arquivos privados dos dois produtos, ou use as variáveis `UY_DB_*` e `PP_DB_*`; os usuários configurados precisam ter acesso ao banco de teste. Os testes se recusam a criar contas fora de `uy_test_db`. Publicações de teste usam uma pasta isolada, sem tocar no conteúdo do editor.
 
 ```sh
 npm run check
+npm run test:config
 npx playwright install chromium
 npm test
 ```
@@ -68,6 +75,6 @@ Se o Chromium já estiver instalado: `CHROMIUM_PATH=/usr/bin/chromium npm test`.
 
 ## GitHub
 
-Faça alterações em uma branch, abra um Pull Request e verifique os testes antes de juntar à `main`. Use Issues para registrar problemas e Releases para guardar versões publicadas. Atualizações de dependências devem atualizar `package-lock.json` e as bibliotecas locais via `npm run vendor`. Não envie `config/local.php`, `.env`, bancos, contas de alunos, senhas nem `node_modules`.
+Faça alterações em uma branch, abra um Pull Request e verifique os testes antes de juntar à `main`. Use Issues para registrar problemas e Releases para guardar versões publicadas. Atualizações de dependências devem atualizar `package-lock.json` e as bibliotecas locais via `npm run vendor`. Não envie os arquivos privados `config/local.php` e `painel-placar/config/local.php`, `.env`, bancos, contas de alunos, senhas nem `node_modules`.
 
 Veja [o relatório de revisão](docs/REVISAO.md) para correções e limitações.

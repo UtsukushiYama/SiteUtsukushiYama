@@ -40,9 +40,6 @@ body.uy-site { background: var(--uy-paper); color: var(--uy-ink); font-family: v
 .uy-access-dialog>div { padding:2rem; }
 .uy-access-dialog h2 { font-size:1.6rem; }
 .uy-access-dialog form { margin-top:1.5rem;text-align:right; }
-body[data-workspace=scoreboard] { line-height:normal;background:var(--uy-ink); }
-body[data-workspace=scoreboard] :is(input,button) { font-family:var(--uy-font); }
-body[data-page=painelplacar] .login-container { margin:4rem auto;max-width:420px;background:var(--uy-white);border-radius:var(--uy-radius);box-shadow:var(--uy-shadow); }
 body[data-page=apostilatecnica] { overflow:auto!important;height:auto!important; }
 body[data-page=apostilatecnica] .kix-appview-editor { position:relative!important; }
 @media(max-width:991px) {

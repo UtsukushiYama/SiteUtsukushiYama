@@ -2,6 +2,7 @@
 declare(strict_types=1);
 if (PHP_SAPI !== 'cli') { http_response_code(403); exit; }
 require_once __DIR__ . '/../config/environment.php';
+require_once __DIR__ . '/../painel-placar/config/environment.php';
 
 $cases = [
     [['SERVER_ADDR'=>'127.0.0.1'], 'apache2handler', false, 'development'],
@@ -27,6 +28,7 @@ try {
 }
 if (!$rejected) throw new RuntimeException('An invalid environment must fail');
 $original = getenv('UY_ENV');
+$originalPanel = getenv('PP_ENV');
 try {
     putenv('UY_ENV=development');
     $local = require __DIR__ . '/../config/local.example.php';
@@ -35,7 +37,14 @@ try {
     if ($local['database'] !== 'uy_db' || $production['database'] !== 'YOUR_INFINITYFREE_DATABASE_NAME') {
         throw new RuntimeException('Template did not select the correct database profile');
     }
+    putenv('PP_ENV=development');
+    $panelLocal=require __DIR__.'/../painel-placar/config/local.example.php';
+    if ($panelLocal['database']!=='uy_db') throw new RuntimeException('Site environment must not select the panel environment');
+    putenv('UY_ENV=development');putenv('PP_ENV=production');
+    $panelProduction=require __DIR__.'/../painel-placar/config/local.example.php';
+    if ($panelProduction['database']!=='YOUR_INFINITYFREE_DATABASE_NAME') throw new RuntimeException('Panel production profile was not selected');
 } finally {
     putenv($original === false ? 'UY_ENV' : 'UY_ENV=' . $original);
+    putenv($originalPanel === false ? 'PP_ENV' : 'PP_ENV=' . $originalPanel);
 }
 echo "Detecção e seleção de credenciais verificadas: localhost, produção, cabeçalho forjado e sobrescrita explícita.\n";

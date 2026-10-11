@@ -5,6 +5,7 @@
   "description": "Biblioteca Kyokushin compatível com PHP e InfinityFree",
   "scripts": {
     "dev": "php -S 127.0.0.1:8080 tools/dev-router.php",
+    "dev:placar": "php -S 127.0.0.1:8082 -t painel-placar painel-placar/tools/dev-router.php",
     "vendor": "node tools/vendor.mjs",
     "check": "node tools/check.mjs",
     "test": "playwright test",

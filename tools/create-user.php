@@ -1,7 +1,7 @@
 <?php
 if (PHP_SAPI!=='cli') {http_response_code(403);exit;}
 require __DIR__.'/../api/config.php';
-if(count($argv)<4 || !in_array($argv[2],['painelplacar','iniciante','intermediario','avancado','admin'],true)) {fwrite(STDERR,"Uso: php tools/create-user.php USUARIO NIVEL 'Nome de exibição'\n");exit(1);}
+if(count($argv)<4 || !in_array($argv[2],['iniciante','intermediario','avancado','admin'],true)) {fwrite(STDERR,"Uso: php tools/create-user.php USUARIO NIVEL 'Nome de exibição'\n");exit(1);}
 $username=$argv[1];$level=$argv[2];$display=$argv[3];
 if(strlen($username)>100 || strlen($display)>150){fwrite(STDERR,"Nome muito longo.\n");exit(1);}
 fwrite(STDERR,"Nova senha (mínimo 12 caracteres): ");

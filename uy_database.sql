@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `username`       VARCHAR(100)    NOT NULL,
   `password_hash`  VARCHAR(255)    NOT NULL,
   `nome_display`   VARCHAR(150)    NOT NULL,
-  `nivel_acesso`   ENUM('guest','painelplacar','iniciante','intermediario','avancado','admin') NOT NULL DEFAULT 'iniciante',
+  `nivel_acesso`   ENUM('guest','iniciante','intermediario','avancado','admin') NOT NULL DEFAULT 'iniciante',
   `data_expiracao` DATE            NULL COMMENT 'NULL = sem expiração',
   `ativo`          TINYINT(1)      NOT NULL DEFAULT 1,
   `created_at`     DATETIME        NOT NULL DEFAULT CURRENT_TIMESTAMP,
