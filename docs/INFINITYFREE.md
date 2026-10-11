@@ -4,8 +4,8 @@
 2. Baixe ou gere o arquivo `UtsukushiYama-InfinityFree.zip`. Extraia no seu computador. Envie os arquivos extraídos para a pasta `htdocs` usando o gerenciador da hospedagem ou seu cliente FTP. A página `index.html` deve ficar diretamente em `htdocs`, sem uma pasta extra envolvendo o site.
 3. Envie também `.htaccess`: ele faz a proteção PHP dos endereços `.html`. Se você já tiver um `.htaccess` com regras próprias, preserve-as e incorpore as novas regras; não apague configurações de SSL ou domínio existentes.
 4. Preserve as pastas de mídias que já estão na hospedagem, `config/local.php` e `storage/stories.json`. O pacote não traz suas credenciais nem o conteúdo salvo pelo editor. Não envie `.git`, `node_modules`, `tools`, `tests`, ZIPs originais ou arquivos SQL para a área pública.
-5. No painel do InfinityFree, crie/selecione seu banco MySQL. Importe `uy_database.sql` **com o banco selecionado**: o script não tenta criar um banco, pois esse procedimento é feito pelo painel da hospedagem. Se já usa as tabelas `usuarios`, `sessoes` e `access_log`, preserve os dados e faça backup; `CREATE TABLE IF NOT EXISTS` não sobrescreve essas tabelas.
-6. Copie `config/local.example.php` para `config/local.php` na hospedagem. Preencha host, porta, nome do banco, usuário e senha fornecidos pelo InfinityFree. Não envie esse arquivo ao GitHub.
+5. No painel do InfinityFree, abra **MySQL Databases** e crie/selecione seu banco MySQL. O SQL não está dentro do ZIP do site: baixe separadamente [uy_database.sql](https://github.com/UtsukushiYama/SiteUtsukushiYama/blob/pacote-download/uy_database.sql), usando o botão **Download raw file** no GitHub. Abra o phpMyAdmin pelo painel, clique no nome completo do banco na coluna esquerda e use **Importar** para enviar esse arquivo. O script não tenta criar um banco, pois esse procedimento é feito pelo painel da hospedagem. Se já usa as tabelas `usuarios`, `sessoes` e `access_log`, preserve os dados e faça backup; `CREATE TABLE IF NOT EXISTS` não sobrescreve essas tabelas.
+6. Copie `config/local.example.php` para `config/local.php` na hospedagem. Preencha host, porta, nome completo do banco (incluindo o prefixo da conta), usuário e senha fornecidos pelo InfinityFree. Não use apenas `uy_db` se o painel mostrar um nome com prefixo. Não envie esse arquivo ao GitHub.
 7. Para um banco antigo, se precisar do nível exclusivo de placar, execute no phpMyAdmin:
 
 ```sql
@@ -25,3 +25,9 @@ O backend agora usa cookie `HttpOnly` com `SameSite=Strict`. O atributo `Secure`
 A integração de contato existente com EmailJS foi preservada. A entrega de e-mails precisa ser conferida no seu serviço; os testes não enviam mensagens reais. Links de WhatsApp e e-mail continuam disponíveis.
 
 A publicação neste ambiente valida o código localmente. Não acessamos nem alteramos sua hospedagem nesta tarefa; o passo final de envio ao InfinityFree continua sendo seu.
+
+## Erro #1044 ao importar
+
+Se a mensagem indicar acesso negado ao executar `CREATE DATABASE IF NOT EXISTS uy_db`, você está usando o SQL antigo. O usuário do InfinityFree não tem permissão para criar bancos pelo phpMyAdmin. Use o arquivo atual do link acima, que cria somente as tabelas dentro do banco selecionado.
+
+Se precisar corrigir uma cópia antiga, remova o comando completo `CREATE DATABASE ...;` e qualquer comando `USE uy_db;`. Crie/selecione o banco pelo painel e importe com esse banco aberto. Isso não exige apagar tabelas nem contas existentes. Faça backup antes de importar no banco que já está em uso.

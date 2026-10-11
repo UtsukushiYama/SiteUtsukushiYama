@@ -1,6 +1,6 @@
 -- ============================================================
--- UTSUKUSHI YAMA - Script de Criação do Banco de Dados
--- Execute este script no phpMyAdmin
+-- UTSUKUSHI YAMA - Criação das tabelas no banco selecionado
+-- Crie o banco pelo painel do InfinityFree e selecione-o no phpMyAdmin antes de importar.
 -- ============================================================
 
 -- Selecione o banco no phpMyAdmin antes de importar. InfinityFree cria o banco pelo painel.
