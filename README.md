@@ -1,7 +1,8 @@
-# Pacote para download
+# Downloads Utsukushi Yama
 
-Pacote PHP do site referente ao commit 159a8f7 da main.
+- UtsukushiYama-InfinityFree.zip: arquivos do site, sem credenciais ou midias originais ausentes.
+- uy_database.sql: importe separadamente no phpMyAdmin, com o banco criado no painel e selecionado.
 
-Nao inclui credenciais locais nem as midias originais ainda nao fornecidas.
+O ZIP nao contem o SQL. Nao envie o SQL para htdocs.
 Preserve config/local.php, storage/stories.json e as midias existentes ao atualizar a hospedagem.
-O codigo-fonte e a documentacao ficam na branch main.
+O codigo-fonte e as instrucoes completas ficam na branch main, em docs/INFINITYFREE.md.
