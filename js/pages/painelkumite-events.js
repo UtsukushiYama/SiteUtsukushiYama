@@ -1,0 +1,24 @@
+document.addEventListener("site:ready", () => {
+  document.querySelector('[data-action-focus="a0"]')?.addEventListener("focus", function(event) { const result=(function(event){clearDefaultValue(this, 'SHIRO')}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-blur="a1"]')?.addEventListener("blur", function(event) { const result=(function(event){restoreDefaultValue(this, 'SHIRO')}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a2"]')?.addEventListener("click", function(event) { const result=(function(event){incrementScore('shiroWazaari')}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a3"]')?.addEventListener("click", function(event) { const result=(function(event){decrementScore('shiroWazaari')}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a4"]')?.addEventListener("click", function(event) { const result=(function(event){incrementScore('shiroChui')}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a5"]')?.addEventListener("click", function(event) { const result=(function(event){decrementScore('shiroChui')}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a6"]')?.addEventListener("click", function(event) { const result=(function(event){incrementScore('shiroGentei')}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a7"]')?.addEventListener("click", function(event) { const result=(function(event){decrementScore('shiroGentei')}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-focus="a8"]')?.addEventListener("focus", function(event) { const result=(function(event){clearDefaultValue(this, 'AKA')}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-blur="a9"]')?.addEventListener("blur", function(event) { const result=(function(event){restoreDefaultValue(this, 'AKA')}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a10"]')?.addEventListener("click", function(event) { const result=(function(event){incrementScore('akaWazaari')}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a11"]')?.addEventListener("click", function(event) { const result=(function(event){decrementScore('akaWazaari')}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a12"]')?.addEventListener("click", function(event) { const result=(function(event){incrementScore('akaChui')}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a13"]')?.addEventListener("click", function(event) { const result=(function(event){decrementScore('akaChui')}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a14"]')?.addEventListener("click", function(event) { const result=(function(event){incrementScore('akaGentei')}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a15"]')?.addEventListener("click", function(event) { const result=(function(event){decrementScore('akaGentei')}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a16"]')?.addEventListener("click", function(event) { const result=(function(event){adjustKoto(1)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a17"]')?.addEventListener("click", function(event) { const result=(function(event){adjustKoto(-1)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a18"]')?.addEventListener("click", function(event) { const result=(function(event){adjustTime(-10)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a19"]')?.addEventListener("click", function(event) { const result=(function(event){adjustTime(-1)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a20"]')?.addEventListener("click", function(event) { const result=(function(event){adjustTime(1)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a21"]')?.addEventListener("click", function(event) { const result=(function(event){adjustTime(10)}).call(this,event); if(result===false)event.preventDefault(); });
+});

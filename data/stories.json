@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "stories": [
+    {
+      "id": "medo", "title": "Sentir medo. Escolher seguir.", "category": "Espírito do Budō", "symbol": "勇", "summary": "Uma reflexão sobre coragem, consciência e o próximo passo — dentro e fora do dōjō.", "credit": "As Crônicas do Sensei · @zen_budo_oficial", "sourceUrl": "https://www.instagram.com/zen_budo_oficial/", "sourceNote": "Transcrição das seis telas recebidas. A publicação de origem indica sete telas; a sétima não foi enviada.",
+      "slides": [
+        {"heading": "Sensei, o senhor tem medo?", "paragraphs": ["— o discípulo perguntou."]},
+        {"heading": "Sempre. Mas não moro lá.", "paragraphs": []},
+        {"heading": "O medo sempre vem.", "paragraphs": ["Ele não pede licença. Aparece antes do combate, antes da decisão, antes do que importa.", "Negar o medo é mentir para si mesmo. E quem mente para si treina para perder."]},
+        {"heading": "Sentir não é fazer morada.", "paragraphs": ["Há uma diferença entre sentir o medo e fazer dele morada.", "O medo que avisa é sinal. Você escuta, e segue.", "O medo que governa é teto. Você abaixa a cabeça, e mora lá sem perceber."]},
+        {"heading": "Coragem não é ausência de medo.", "paragraphs": ["É a recusa de permanecer nele.", "Você sente. Você reconhece. E mesmo assim, dá um passo."]},
+        {"heading": "O medo sempre virá.", "paragraphs": ["A questão é onde você escolhe morar."]}
+      ]
+    }
+  ]
+}

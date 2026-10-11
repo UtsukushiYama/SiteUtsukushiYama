@@ -1,0 +1,28 @@
+document.addEventListener("site:ready", () => {
+  document.querySelector('[data-action-click="a0"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a1"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a2"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a3"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a4"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a5"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a6"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a7"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a8"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a9"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a10"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a11"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a12"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a13"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a14"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a15"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a16"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a17"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a18"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a19"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a20"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a21"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a22"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a23"]')?.addEventListener("click", function(event) { const result=(function(event){showImage(this.src)}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a24"]')?.addEventListener("click", function(event) { const result=(function(event){prevImage()}).call(this,event); if(result===false)event.preventDefault(); });
+  document.querySelector('[data-action-click="a25"]')?.addEventListener("click", function(event) { const result=(function(event){nextImage()}).call(this,event); if(result===false)event.preventDefault(); });
+});

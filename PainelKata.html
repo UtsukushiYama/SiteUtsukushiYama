@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Painel Kata - Kyokushin</title>
+<link href="css/site.css" rel="stylesheet"/><meta content="light" name="color-scheme"/></head>
+<body class="uy-site" data-page="painelkata" data-required-level="painelplacar" data-workspace="scoreboard">
+<div class="kata-mode">
+<div class="kata-header">
+<input class="kata-event-title" id="kataEventTitle" type="text" value="CAMPEONATO DE KARATE KYOKUSHIN"/>
+<input class="kata-event-subtitle" id="kataEventSubtitle" type="text" value="Utsukushī Yama Kyokushin Karate Dōjō - Taubaté, Brazil"/>
+</div>
+<div class="kata-content">
+<input class="competitor-name" data-action-blur="a1" data-action-focus="a0" id="competitorName" placeholder="NOME DO COMPETIDOR" type="text" value="COMPETIDOR KATA"/>
+<div class="scores-panel">
+<div class="scores-grid" id="judgeScores"></div>
+<div class="final-score" id="finalScoreContainer">
+<span class="final-score-value" id="finalScore">0,00</span>
+</div>
+</div>
+<div class="kata-controls">
+<button class="kata-btn" id="addJudge">ADICIONAR JUIZ</button>
+<button class="kata-btn" id="removeJudge">REMOVER JUIZ</button>
+<button class="kata-btn reset" id="resetScores">LIMPAR NOTAS</button>
+</div>
+</div>
+<div class="taskbar">
+<button class="taskbar-btn btn-add" id="addJudgeTaskbar">
+<i class="fas fa-user-plus"></i> Adicionar
+            </button>
+<button class="taskbar-btn btn-remove" id="removeJudgeTaskbar">
+<i class="fas fa-user-minus"></i> Remover
+            </button>
+<button class="taskbar-btn btn-reset" id="resetScoresTaskbar">
+<i class="fas fa-undo"></i> Limpar
+            </button>
+</div>
+<div class="logo-container-kata">
+<img alt="Logo" class="logo-img" id="userLogo" src="img/logo-default.png"/>
+</div>
+<div class="speed-dial-container">
+<button class="speed-dial-main" id="speedDialMainBtn">
+<img alt="Logo" class="speed-dial-logo" id="speedDialLogo" src="img/logo-default.png"/>
+</button>
+<div class="speed-dial-actions" id="speedDialActionsKata"></div>
+</div>
+</div>
+<script defer="True" src="js/site.js"></script></body>
+</html>g

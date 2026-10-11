@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Painel Kumite - Kyokushin</title>
+<link href="css/site.css" rel="stylesheet"/><meta content="light" name="color-scheme"/></head>
+<body class="uy-site" data-page="painelkumite" data-required-level="painelplacar" data-workspace="scoreboard">
+<div class="kumite-layout">
+<div class="event-header">
+<input class="event-title" id="eventTitleDisplay" type="text" value="CAMPEONATO DE KARATE KYOKUSHIN"/>
+<input class="event-subtitle" id="eventSubtitleDisplay" type="text" value="Utsukushī Yama Kyokushin Karate Dōjō - Taubaté, Brazil"/>
+</div>
+<div class="kumite-main">
+<div class="shiro-side">
+<input class="shiro-title" data-action-blur="a1" data-action-focus="a0" id="shiroName" placeholder="NOME ATLETA" type="text" value="SHIRO"/>
+<div class="score-box">
+<div class="score-controls">
+<button class="score-btn" data-action-click="a2">+</button>
+<button class="score-btn" data-action-click="a3">−</button>
+</div>
+<input class="score-input" id="shiroWazaari" readonly="" type="text" value="0"/>
+<div class="score-label"><strong>WAZAARI</strong><br/>+1</div>
+</div>
+<div class="score-box">
+<div class="score-controls">
+<button class="score-btn" data-action-click="a4">+</button>
+<button class="score-btn" data-action-click="a5">−</button>
+</div>
+<input class="score-input" id="shiroChui" readonly="" type="text" value="0"/>
+<div class="score-label"><strong>CHUI</strong><br/>-0,25</div>
+</div>
+<div class="score-box">
+<div class="score-controls">
+<button class="score-btn" data-action-click="a6">+</button>
+<button class="score-btn" data-action-click="a7">−</button>
+</div>
+<input class="score-input" id="shiroGentei" readonly="" type="text" value="0"/>
+<div class="score-label"><strong>GENTEI</strong><br/>-0,5</div>
+</div>
+</div>
+<div class="aka-side">
+<input class="aka-title" data-action-blur="a9" data-action-focus="a8" id="akaName" placeholder="NOME ATLETA" type="text" value="AKA"/>
+<div class="score-box">
+<div class="score-label"><strong>WAZAARI</strong><br/>+1</div>
+<input class="score-input" id="akaWazaari" readonly="" type="text" value="0"/>
+<div class="score-controls">
+<button class="score-btn" data-action-click="a10">+</button>
+<button class="score-btn" data-action-click="a11">−</button>
+</div>
+</div>
+<div class="score-box">
+<div class="score-label"><strong>CHUI</strong><br/>-0,25</div>
+<input class="score-input" id="akaChui" readonly="" type="text" value="0"/>
+<div class="score-controls">
+<button class="score-btn" data-action-click="a12">+</button>
+<button class="score-btn" data-action-click="a13">−</button>
+</div>
+</div>
+<div class="score-box">
+<div class="score-label"><strong>GENTEI</strong><br/>-0,5</div>
+<input class="score-input" id="akaGentei" readonly="" type="text" value="0"/>
+<div class="score-controls">
+<button class="score-btn" data-action-click="a14">+</button>
+<button class="score-btn" data-action-click="a15">−</button>
+</div>
+</div>
+</div>
+<div class="timer-central">
+<div class="koto-display">
+<span class="koto-label">KOTO:</span>
+<div class="koto-controls">
+<input class="koto-input" id="kotoNumber" max="99" min="1" readonly="" type="number" value="1"/>
+<div class="koto-buttons">
+<button class="koto-btn" data-action-click="a16">+</button>
+<button class="koto-btn" data-action-click="a17">−</button>
+</div>
+</div>
+</div>
+<div class="timer-display-box" id="timerWrapper">
+<div class="timer-value" id="timerDisplay">2:00</div>
+<div class="timer-controls-bar">
+<button class="timer-adjust-btn" data-action-click="a18">-10s</button>
+<button class="timer-adjust-btn" data-action-click="a19">-1s</button>
+<div class="timer-slider-container">
+<input class="timer-slider" id="timerSlider" max="300" min="0" step="1" type="range" value="120"/>
+</div>
+<button class="timer-adjust-btn" data-action-click="a20">+1s</button>
+<button class="timer-adjust-btn" data-action-click="a21">+10s</button>
+</div>
+</div>
+</div>
+<div class="logo-container">
+<img alt="Logo" class="logo-img" id="userLogo" src="img/logo-default.png"/>
+</div>
+</div>
+<div class="taskbar">
+<button class="taskbar-btn btn-start" id="startTimer">
+<i class="fas fa-play"></i> <span id="startBtnText">INICIAR</span>
+</button>
+<button class="taskbar-btn btn-pause" id="pauseTimer">
+<i class="fas fa-pause"></i> Pausar
+            </button>
+<button class="taskbar-btn btn-reset" id="resetTimer">
+<i class="fas fa-undo"></i> Limpar
+            </button>
+</div>
+<div class="speed-dial-container">
+<button class="speed-dial-main" id="speedDialMainBtn">
+<img alt="Logo" class="speed-dial-logo" id="speedDialLogo" src="img/logo-default.png"/>
+</button>
+<div class="speed-dial-actions" id="speedDialActions"></div>
+</div>
+</div>
+<script defer="True" src="js/site.js"></script></body>
+</html>

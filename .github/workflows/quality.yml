@@ -1,0 +1,47 @@
+name: Verificar site
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: ci-only-local-password
+          MYSQL_DATABASE: uy_test_db
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 --silent"
+          --health-interval=10s --health-timeout=5s --health-retries=10
+    env:
+      UY_DB_HOST: 127.0.0.1
+      UY_DB_PORT: 3306
+      UY_DB_DATABASE: uy_test_db
+      UY_DB_USERNAME: root
+      UY_DB_PASSWORD: ci-only-local-password
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: mysqli
+      - run: npm ci
+      - run: npm run vendor
+      - run: git diff --exit-code -- assets/vendor
+      - run: mysql -h 127.0.0.1 -u root -pci-only-local-password uy_test_db < uy_database.sql
+      - run: npx playwright install --with-deps chromium
+      - run: npm run verify
+      - run: npm run package
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: validacao-e-site
+          path: |
+            playwright-report/
+            dist/

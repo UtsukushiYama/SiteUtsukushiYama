@@ -1,0 +1,12 @@
+/* Single stylesheet entry point. Edit theme.css to change the shared identity. */
+@import url('../assets/vendor/bootstrap.min.css');
+@import url('../assets/vendor/fontawesome/css/all.min.css');
+@import url('../lib/animate/animate.min.css');
+@import url('../lib/owlcarousel/assets/owl.carousel.min.css');
+@import url('../assets/vendor/tippy.css');
+@import url('style.css');
+@import url('hotspots.css');
+@import url('modal-gallery.css');
+@import url('components.css');
+@import url('theme.css');
+@import url('stories.css');

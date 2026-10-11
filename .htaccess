@@ -1,0 +1,10 @@
+DirectoryIndex index.html
+RewriteEngine On
+# Configuration, tools, database scripts and runtime data must never be served.
+RewriteRule ^(?:config|storage|tools|tests|docs|node_modules)(?:/|$) - [F,L,NC]
+RewriteRule (^|/)\. - [F,L]
+RewriteRule ^(?:package(?:-lock)?\.json|playwright\.config\.js|uy_database\.sql|README\.md)$ - [F,L,NC]
+RewriteRule ^api/config\.php$ - [F,L,NC]
+RewriteRule ^(?:header|footer|blog-sidebar|modal-assinatura|modal-construcao)\.html$ - [L]
+RewriteRule ^$ page.php?page=index.html [L]
+RewriteRule ^([A-Za-z0-9_-]+\.html)$ page.php?page=$1 [L,QSA]

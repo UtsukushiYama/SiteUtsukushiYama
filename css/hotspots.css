@@ -1,0 +1,197 @@
+/* ============================================
+   HOTSPOTS INTERATIVOS - DOGI KYOKUSHIN
+   ============================================ */
+
+/* Container da imagem com hotspots */
+.hotspot-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.hotspot-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hotspot - círculo pulsante */
+.hotspot {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: rgba(200, 16, 46, 0.8);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 0 rgba(200, 16, 46, 0.7);
+  animation: pulse 2s infinite;
+}
+
+/* Animação de pulso */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(200, 16, 46, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(200, 16, 46, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(200, 16, 46, 0);
+  }
+}
+
+/* Hotspot hover */
+.hotspot:hover {
+  background: rgba(200, 16, 46, 1);
+  transform: translate(-50%, -50%) scale(1.2);
+  animation: none;
+}
+
+/* Número dentro do hotspot */
+.hotspot::before {
+  content: attr(data-number);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+/* Tooltip/Card explicativo */
+.hotspot-tooltip {
+  position: absolute;
+  background: white;
+  border: 2px solid #c8102e;
+  border-radius: 8px;
+  padding: 15px 20px;
+  min-width: 250px;
+  max-width: 350px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* Tooltip visível */
+.hotspot-tooltip.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Seta do tooltip */
+.hotspot-tooltip::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  left: var(--arrow-left, 20px); /* Usa variável CSS dinâmica */
+  transform: translateX(-10px); /* Centraliza a seta de 20px */
+}
+
+/* Seta para cima (tooltip abaixo do hotspot) */
+.hotspot-tooltip.bottom::before {
+  top: -10px;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #c8102e transparent;
+}
+
+/* Seta para baixo (tooltip acima do hotspot) */
+.hotspot-tooltip.top::before {
+  bottom: -10px;
+  border-width: 10px 10px 0 10px;
+  border-color: #c8102e transparent transparent transparent;
+}
+
+/* Título do tooltip */
+.hotspot-tooltip h6 {
+  margin: 0 0 10px 0;
+  color: #c8102e;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 2px solid #c8102e;
+  padding-bottom: 8px;
+}
+
+/* Texto japonês */
+.hotspot-tooltip .japanese {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  margin-top: 3px;
+}
+
+/* Descrição do tooltip */
+.hotspot-tooltip p {
+  margin: 10px 0 0 0;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Botão fechar */
+.hotspot-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  background: #c8102e;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hotspot-close:hover {
+  background: #a00d26;
+  transform: rotate(90deg);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hotspot {
+    width: 25px;
+    height: 25px;
+  }
+
+  .hotspot::before {
+    font-size: 12px;
+  }
+
+  .hotspot-tooltip {
+    min-width: 200px;
+    max-width: 280px;
+    padding: 12px 15px;
+    font-size: 13px;
+  }
+
+  .hotspot-tooltip h6 {
+    font-size: 14px;
+  }
+
+  .hotspot-tooltip p {
+    font-size: 13px;
+  }
+}

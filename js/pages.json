@@ -1,0 +1,354 @@
+{
+  "11Motos.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "404.html": {
+    "required": null,
+    "scripts": []
+  },
+  "Galeria_Exames.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/shared/429c6711edf0.js",
+      "js/pages/galeria-exames-events.js"
+    ]
+  },
+  "Galeria_SenseiFabio.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/shared/429c6711edf0.js",
+      "js/pages/galeria-senseifabio-events.js"
+    ]
+  },
+  "Galeria_Treinos.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/shared/429c6711edf0.js",
+      "js/pages/galeria-treinos-events.js"
+    ]
+  },
+  "KyokushinNoBrasil.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "PainelKata.html": {
+    "required": "painelplacar",
+    "scripts": [
+      "js/pages/painelkata-1.js",
+      "js/pages/painelkata-events.js"
+    ]
+  },
+  "PainelKumite.html": {
+    "required": "painelplacar",
+    "scripts": [
+      "js/pages/painelkumite-1.js",
+      "js/pages/painelkumite-events.js"
+    ]
+  },
+  "PainelKumiteJogai.html": {
+    "required": "painelplacar",
+    "scripts": [
+      "js/pages/painelkumitejogai-1.js",
+      "js/pages/painelkumitejogai-events.js"
+    ]
+  },
+  "PainelLanding.html": {
+    "required": null,
+    "scripts": [
+      "js/pages/painellanding-0.js"
+    ]
+  },
+  "PainelPlacar.html": {
+    "required": null,
+    "scripts": []
+  },
+  "Projeto-Shinkyoku.html": {
+    "required": "admin",
+    "scripts": [
+      "js/pages/projeto-shinkyoku-0.js",
+      "js/pages/projeto-shinkyoku-events.js"
+    ]
+  },
+  "SenseiFabio.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "about-02.html": {
+    "required": "admin",
+    "scripts": []
+  },
+  "about.html": {
+    "required": "admin",
+    "scripts": []
+  },
+  "apostilatecnica.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/pages/apostilatecnica-0.js",
+      "js/pages/apostilatecnica-1.js",
+      "js/pages/apostilatecnica-2.js"
+    ]
+  },
+  "armas.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/shared/c0b286f9926f.js"
+    ]
+  },
+  "blog-card10.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/blog-cards-data.js"
+    ]
+  },
+  "blog-card12.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/blog-cards-data.js"
+    ]
+  },
+  "blog-card13.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/blog-cards-data.js"
+    ]
+  },
+  "blog-card14.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/blog-cards-data.js"
+    ]
+  },
+  "blog-card15.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/blog-cards-data.js"
+    ]
+  },
+  "blog-card16.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/blog-cards-data.js"
+    ]
+  },
+  "blog-card17.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/blog-cards-data.js"
+    ]
+  },
+  "blog-card18.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/blog-cards-data.js"
+    ]
+  },
+  "blog-card19.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/blog-cards-data.js"
+    ]
+  },
+  "blog-card20.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/blog-cards-data.js"
+    ]
+  },
+  "blog-card9.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/blog-cards-data.js"
+    ]
+  },
+  "blog.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/blog-cards-data.js"
+    ]
+  },
+  "contact.html": {
+    "required": null,
+    "scripts": [
+      "js/pages/contact-1.js",
+      "js/pages/contact-15.js"
+    ]
+  },
+  "dogi-obi.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/hotspots.js",
+      "js/modal-gallery.js",
+      "js/pages/dogi-obi-3.js",
+      "js/pages/dogi-obi-events.js"
+    ]
+  },
+  "dojokunpage.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/shared/6c4c6521c121.js"
+    ]
+  },
+  "examesdegraduacao.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "graduacaoheikokai.html": {
+    "required": null,
+    "scripts": [
+      "js/pages/graduacaoheikokai-16.js",
+      "js/pages/graduacaoheikokai-17.js"
+    ]
+  },
+  "graduacaowkb.html": {
+    "required": null,
+    "scripts": [
+      "js/pages/graduacaowkb-16.js"
+    ]
+  },
+  "heikokai.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "historiadokarate.html": {
+    "required": null,
+    "scripts": []
+  },
+  "historiautsukushiyama.html": {
+    "required": null,
+    "scripts": []
+  },
+  "hundredmankumite.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "index.html": {
+    "required": null,
+    "scripts": [
+      "js/blog-cards-data.js",
+      "js/pages/index-12.js"
+    ]
+  },
+  "kata-dicas.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "kata-filosofia.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "kata-pinanserie.html": {
+    "required": "intermediario",
+    "scripts": []
+  },
+  "kata-significado.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "kata-sokugitaikyokusonoichi.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "kata-taikyokuserie.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "kata-taikyokusonoichi.html": {
+    "required": null,
+    "scripts": []
+  },
+  "kata-taikyokusononi.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "kata-taikyokusonosan.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "kata-teoria.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "kata-tsukinokata.html": {
+    "required": "avancado",
+    "scripts": []
+  },
+  "kihongeiko.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/pages/kihongeiko-12.js"
+    ]
+  },
+  "kobudo.html": {
+    "required": "avancado",
+    "scripts": [
+      "js/shared/c0b286f9926f.js"
+    ]
+  },
+  "origemdokyokushin.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/pages/origemdokyokushin-1.js",
+      "js/pages/origemdokyokushin-2.js"
+    ]
+  },
+  "osu.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "oyamamasutatsusosai.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "project-02.html": {
+    "required": "admin",
+    "scripts": []
+  },
+  "project-details.html": {
+    "required": "admin",
+    "scripts": []
+  },
+  "project.html": {
+    "required": "admin",
+    "scripts": []
+  },
+  "reijisaho.html": {
+    "required": "iniciante",
+    "scripts": [
+      "js/shared/6c4c6521c121.js"
+    ]
+  },
+  "senseisenpaikohai.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "service-details.html": {
+    "required": "admin",
+    "scripts": []
+  },
+  "service.html": {
+    "required": "admin",
+    "scripts": []
+  },
+  "shihanotavio.html": {
+    "required": "admin",
+    "scripts": []
+  },
+  "simbolosdokyokushin.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "tameshiware.html": {
+    "required": "intermediario",
+    "scripts": []
+  },
+  "worldkyokushinbudokai.html": {
+    "required": "iniciante",
+    "scripts": []
+  },
+  "stories.html": {
+    "required": null,
+    "scripts": []
+  }
+}

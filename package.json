@@ -1,0 +1,30 @@
+{
+  "name": "utsukushi-yama",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Biblioteca Kyokushin compatível com PHP e InfinityFree",
+  "scripts": {
+    "dev": "php -S 127.0.0.1:8080 tools/dev-router.php",
+    "vendor": "node tools/vendor.mjs",
+    "check": "node tools/check.mjs",
+    "test": "playwright test",
+    "verify": "npm run check && npm test",
+    "package": "python3 tools/package.py"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@emailjs/browser": "4.4.1",
+    "@fortawesome/fontawesome-free": "6.4.0",
+    "@popperjs/core": "2.11.8",
+    "bootstrap": "5.3.3",
+    "jquery": "3.7.1",
+    "jszip": "3.10.1",
+    "tippy.js": "6.3.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1",
+    "acorn": "8.16.0"
+  }
+}
