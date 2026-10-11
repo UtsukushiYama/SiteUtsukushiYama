@@ -8,7 +8,8 @@
     "vendor": "node tools/vendor.mjs",
     "check": "node tools/check.mjs",
     "test": "playwright test",
-    "verify": "npm run check && npm test",
+    "test:config": "php tests/configuration.php",
+    "verify": "npm run check && npm run test:config && npm test",
     "package": "python3 tools/package.py"
   },
   "engines": {

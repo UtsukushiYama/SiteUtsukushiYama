@@ -7,7 +7,7 @@ Biblioteca de Kyokushin, stories e placares de campeonato. HTML, CSS, JavaScript
 1. Instale PHP 8.1+ com a extensão `mysqli`, MySQL/MariaDB e Node.js 20+.
 2. Execute `npm ci` e `npm run vendor` na pasta do repositório.
 3. Crie o banco `uy_db`. Importe `uy_database.sql` com esse banco selecionado.
-4. Copie `config/local.example.php` para `config/local.php` e preencha os dados do seu banco. Esse arquivo é privado e ignorado pelo Git.
+4. Copie `config/local.example.php` para `config/local.php` e preencha os blocos `development` (banco local) e `production` (InfinityFree). O arquivo seleciona automaticamente o ambiente. Esse arquivo é privado e ignorado pelo Git. Veja [a configuração dos dois ambientes](docs/CONFIGURACAO.md).
 5. Execute `php tools/create-user.php seu_usuario admin "Seu nome"` para criar a primeira conta. Digite uma **nova** senha no terminal.
 6. Execute `npm run dev`. Abra o endereço informado pelo PHP no seu próprio computador.
 

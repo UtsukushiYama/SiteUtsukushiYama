@@ -10,5 +10,13 @@ $root->query("CREATE USER IF NOT EXISTS 'uy_development'@'127.0.0.1' IDENTIFIED 
 $root->query("ALTER USER 'uy_development'@'127.0.0.1' IDENTIFIED BY '$escaped'");
 foreach(['uy_db','uy_test_db'] as $name)$root->query("GRANT ALL ON `$name`.* TO 'uy_development'@'127.0.0.1'");
 $config=['host'=>'127.0.0.1','port'=>3307,'database'=>'uy_db','username'=>'uy_development','password'=>$password];
-file_put_contents($file,"<?php\nreturn ".var_export($config,true).";\n");chmod($file,0600);
+$previousEnvironment=getenv('UY_ENV');
+putenv('UY_ENV=production');
+$production=require __DIR__.'/../config/local.example.php';
+putenv($previousEnvironment===false?'UY_ENV':'UY_ENV='.$previousEnvironment);
+$profiles=['development'=>$config,'production'=>$production];
+$content="<?php\nrequire_once __DIR__ . '/environment.php';\n";
+$content.='$environment = detectSiteEnvironment($_SERVER, PHP_SAPI, getenv(\'UY_ENV\'));'."\n";
+$content.='$databases = '.var_export($profiles,true).";\nreturn \$databases[\$environment];\n";
+file_put_contents($file,$content);chmod($file,0600);
 echo "Banco local configurado sem alterar credenciais existentes.\n";

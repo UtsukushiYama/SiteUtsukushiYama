@@ -29,4 +29,4 @@ PATH=/workspace/runtime/bin:$PATH CHROMIUM_PATH=/usr/bin/chromium npm run verify
 
 Confirme que a API de stories responde com conteúdo e que o leitor abre no navegador. Não crie links de preview para localhost durante onboarding: as solicitações locais são usadas só para validação interna.
 
-O repositório não exige segredos de terceiros para desenvolvimento público, stories ou exportação. O banco local já está configurado. A produção usa seu próprio `config/local.php`; não salve valores de produção em scripts ou configurações versionadas.
+O repositório não exige segredos de terceiros para desenvolvimento público, stories ou exportação. O banco local já está configurado. Novas configurações geradas usam perfis `development` e `production`, com seleção automática; o bloco de produção contém somente placeholders no cloud. Não salve valores de produção em scripts ou configurações versionadas. Veja `docs/CONFIGURACAO.md` para configurar os dois perfis.
